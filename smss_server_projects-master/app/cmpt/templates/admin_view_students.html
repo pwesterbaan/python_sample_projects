@@ -1,0 +1,25 @@
+{% extends 'cmpt_admin_layout.html' %}
+
+{% block head -%}
+<link rel="stylesheet"
+    	  type="text/css"
+    	  href="{{url_for('.static',filename='styles/admin_view_students.css')}}">
+<script type="text/javascript"
+	src="{{url_for('.static',filename='scripts/cmpt_functions.js')}}"></script>
+<script type="text/javascript"
+	src="{{url_for('.static',filename='scripts/admin_view_students.js')}}"></script>
+{% endblock %}
+{%- block content -%}
+<div style="margin: 0 auto; text-align: left; margin-top: 40px;">
+<div class="title">View Students</div>
+{{ menu }}
+<p>Click <a href="admin_download_ids">here</a> to download a file of XIDs and ALEKS mthscIDs (for those with scores)</p>
+<p>Clicking delete all or delete for a specific person will remove them from the eligibility list.</p>
+<form action="admin_view_students" name="eligibility_list" method="POST">
+    {{ student_type_dropdown }}
+    <input type="submit" value="View Students">
+    <div style="padding-bottom: 5px; color: #FF0000; min-height: 20px;">{{ info }}</div>
+{{ content }}
+</div>
+</div>
+{%- endblock content %}

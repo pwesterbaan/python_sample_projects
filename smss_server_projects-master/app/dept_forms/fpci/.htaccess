@@ -1,0 +1,20 @@
+<Files "*.php">
+	AuthType shibboleth
+	ShibRequestSetting requireSession 1
+	require valid-user
+</Files>
+
+
+<Files "fpci-functions.php">
+	order deny,allow
+	deny from all
+</Files>
+
+#redirect for directory maintenance
+Options +FollowSymLinks
+#RewriteEngine on
+#RewriteCond %{REMOTE_ADDR} !^123\.456\.789\.000
+#RewriteCond %{REQUEST_URI} !maintenance.php$ [NC]
+#RewriteCond %{REQUEST_URI} !\.(jpe?g?|png|gif) [NC]
+#RewriteRule .* /dept_forms/fpci/maintenance.php [R=302,L]
+php_value max_input_vars 3000

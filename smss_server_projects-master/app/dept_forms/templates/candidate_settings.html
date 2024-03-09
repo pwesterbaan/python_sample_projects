@@ -1,0 +1,21 @@
+{% extends 'dept_forms_layout.html' %}
+
+{% block head -%}
+{% endblock %}
+{%- block content -%}
+
+<div style="margin-top: 10px; text-align: center;">
+    <a href="candidate_list" style="margin: 5px;">Candidate List</a>
+    <a href="pool_list" style="margin: 5px;">Candidate Pools</a>
+</div>
+<hr>
+<div style="margin-top: 15px;">
+    <form action="candidate_settings" method="POST">
+        <div><label for="pool_id">Current candidate pool:</label> {{pool_dropdown}}</div>
+        <div style="text-align: center; margin-top: 15px;">
+            <input type="submit" value="Save Settings">
+            <input type="hidden" name="form_name" value="settings_form">
+        </div>
+    </form>
+</div>
+{%- endblock content %}

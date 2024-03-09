@@ -1,0 +1,11 @@
+*#
+*~
+\#*#
+.csv
+ferpa_repo
+flask_session/
+helloWorld.php
+junk
+*__pycache__/
+testFile.py
+venv/

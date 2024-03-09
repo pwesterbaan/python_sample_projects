@@ -1,0 +1,44 @@
+<Files "*">
+	AuthType shibboleth
+	ShibRequestSetting requireSession 1
+	require valid-user
+</Files>
+
+<Files "edit.php">
+	AuthType shibboleth
+	ShibRequestSetting requireSession 1
+	require user HEDETNI # Kevin Hedetniemi
+	require user vmcclai #Connie McClain
+	require user AHAYNE #April Haynes
+	require user ssather #Keri
+	require user MCMAHA2 #Chris McMahan
+	require user LCALLA
+	require user NATNAT
+	require user MTHGRAD
+	require user KEVJA
+</Files>
+
+<Files "admin-*">
+	AuthType shibboleth
+	ShibRequestSetting requireSession 1
+	require user HEDETNI # Kevin Hedetniemi
+	require user vmcclai #Connie McClain
+	require user AHAYNE #April Haynes
+	require user ssather #Keri
+	require user MCMAHA2 #Chris McMahan
+	require user LCALLA
+	require user NATNAT
+	require user MTHGRAD
+	require user KEVJA
+</Files>
+
+
+<Files "gs-travel-functions.php">
+	order deny,allow
+	deny from all
+</Files>
+
+#redirect for directory maintenance
+Options +FollowSymLinks
+RewriteEngine on
+#RewriteRule index.php http://mthsc.clemson.edu/ug_opportunities/maintenance.php [R=307,L] 

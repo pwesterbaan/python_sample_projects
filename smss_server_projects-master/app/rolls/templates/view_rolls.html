@@ -1,0 +1,21 @@
+{% extends 'rolls_layout.html' %}
+
+{% block head -%}
+{% endblock %}
+{%- block content -%}
+    
+<div style="width: 800px; margin: 0px auto;">
+  <div style="text-align: center; font-family: sans-serif; font-weight: bold; font-size: 40px; color: #F66733;">{{semester}} {{year}}</div>
+  <hr>
+  <form  action="view_rolls" method="POST">
+    <p style="margin-bottom: 10px;">Sometimes the morning download of the rolls from Banner doesn't get all the students. You can download them again from Banner by clicking the button below.</p> 
+    <p>
+      <input type="submit" value="Download Banner Rolls">
+      <!--<input type="hidden" name="form_name" value="download_Banner_rolls">-->
+    </p>
+  </form>
+  <hr>
+  <p style="margin-bottom: 10px;">You can download a tab delimited version <a href="view_rolls_download">here</a>.</p>
+<div id="content_pane">{{content}}</div>
+</div>
+{%- endblock content %}

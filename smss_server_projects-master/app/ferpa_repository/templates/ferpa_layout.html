@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <title>{{title}}</title>
+    {% block head %}{% endblock %}
+    {% block javascript %} {% endblock %}
+  </head>
+
+  <body style="text-align: center; background-color: #666666;">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript"
+	    src={{url_for('static',filename='scripts/msgBoxFade.js')}}></script>
+    <script type="text/javascript">
+      function show_save_confirmation()
+      {
+	  if($(".alert").html().length > 0)
+	  {
+              $(".alert").show();
+              $(".alert").delay(10000).fadeOut(600);
+	  }
+      }
+    </script>
+    <style type="text/css">
+      .alert
+      {
+	  display: none;
+	  padding: 2px;
+	  margin: 10px;
+	  background: #FFFF99;
+	  border: 2px solid #990000;
+	  font-weight: bold;
+	  font-size: 20px;
+	  margin: 0px auto;
+      }
+      .outline
+      {
+	  border: solid 1px black;
+	  margin: 0px auto;
+      }
+      .outline td
+      {
+	  border: solid 1px black;
+	  padding: 7px;
+      }
+      .outline tr.title td
+      {2
+       text-align: center;
+       font-weight: bold;
+      }
+    </style>
+    <div style="width: 800px; margin: 0 auto; text-align: left;
+		background-color: #FFFFFF; padding: 8px; margin-top: 30px; border: ridge
+		#666666 4px;">
+      <h1 style="background-color: #F66733; border: solid 2px #000000; font-size: 50px; line-height: 90px; color: #FFFFFF; text-align: center;">{{description}}</h1>
+      <hr>
+      <div style="text-align: center;">
+        {% include 'navigation.html' %}
+      </div>
+      <hr>
+      <div style="min-height: 40px; text-align: center; Z-index: 1">
+	<span id="flash_messages_box" class="alert">{{ get_flashed_messages()[-1] }}</span>
+      </div>
+      {% block content %}{% endblock %}
+      {# Uncomment the following line to print the debug variable to the page #}
+      {# <p> debug in layout: {{ debug }} </p> #}
+    </div>
+  </body>
+</html>

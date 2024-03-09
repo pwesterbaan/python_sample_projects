@@ -1,0 +1,39 @@
+{% extends 'ug_course_pages_layout.html' %}
+
+{% block head -%}
+{% endblock %}
+{%- block content -%}
+
+<div id="main">
+  <div id="header">
+    <a href="http://www.clemson.edu/math" title="School Home">
+      <img src="/style/math_logo.png" alt="school logo">
+    </a>
+    <h1>Coordinated Course Information</h1>
+  </div>
+  
+  <div id="content" role="main">	
+    <h2>Course Information and Materials</h2>
+    
+    <div>
+      {{content}}
+    </div>
+
+    <h2>General Information</h2>
+    
+    <ul>
+      <li><a href="/ug/MML.pdf">Instructions for Registering MyMathLab</a> (PDF)</li>
+      <li><a href="/ug/scantron.gif">Correctly formatted Scantron form</a></li>
+      <li>Basic Skills Test scores
+	<ul>
+	  <li><a href="/assessment/bst/retrieve_score">Retrieve your Basic Skills Test score</a></li>
+	</ul>
+      </li>
+      <li><a href="calculator">Calculator Recommendations</a> (Calculator recommendations for MATH 1010, 1020, 1030, 1040, 1050, 1060, 1080, 2030, and 2070)</li>
+      <li><a href="https://mthsc.clemson.edu/tutor-list">Tutor List</a>: a list of tutors and contact information available for undergraduate Math courses.</li>
+    </ul>
+  </div>
+  
+  <div id="footer"><a href="/dept_forms/website_error" target="_blank">Report a problem with this website</a></div>
+</div>
+{%- endblock content %}

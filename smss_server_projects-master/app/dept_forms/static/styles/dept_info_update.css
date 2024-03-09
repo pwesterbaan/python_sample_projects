@@ -1,0 +1,49 @@
+a:link {color: #9900FF}
+a:visited {color: #F66733}
+a:active {color: #9900FF}
+
+.text_data
+{
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.ui-widget
+{
+    font-size: 12px;
+}
+
+td
+{
+    vertical-align: top;
+    padding-bottom: 8px;
+}
+
+.delete_link
+{
+    cursor: pointer;
+    text-decoration: underline;
+    color: #FF0000;
+}
+
+.add_link
+{
+    cursor: pointer;
+    text-decoration: underline;
+    color: #009900;
+}
+
+.edit_link
+{
+    cursor: pointer;
+    text-decoration: underline;
+    color: #3399FF;
+}
+
+/* css for timepicker */
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }

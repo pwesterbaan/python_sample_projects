@@ -1,0 +1,35 @@
+{% extends 'gc_layout.html' %}
+
+{% block head -%}
+<script type="text/javascript"
+	src="static/scripts/manage_scantrons.js"></script>
+{% endblock %}
+{%- block content -%}
+
+{{ role_box }}
+{{ menu }}
+<div class="main_content">
+
+<table class="action_table">
+    <tr>
+        <td>Course:</td>
+        <td>Item:</td>
+        <td>Action:</td>
+    </tr>
+    <tr>
+        <td>{{ courses_dropdown }}</td>
+        <td><select name="exam_id" id="exam_id" onchange="clear_content()"></select></td>
+        <td>
+            <select name="action" id="action" onchange="try_action()">
+                <option value="download_rolls">Download Rolls</option>
+                <option value="view_scantrons">View scantrons</option>
+                <option value="submit_scantrons">Submit scantrons</option>
+            </select>
+            <button type="button" onclick="get_action()">Select</button>
+        </td>
+    </tr>
+</table>
+
+<div id="content_pane"></div>
+</div>
+{%- endblock content %}

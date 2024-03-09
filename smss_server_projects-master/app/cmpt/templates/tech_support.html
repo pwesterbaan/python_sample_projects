@@ -1,0 +1,45 @@
+{% extends 'cmpt_layout.html' %}
+
+{% block head -%}
+{% endblock %}
+{%- block content -%}
+    
+<div class="container" id="container">
+{{ header }}
+{{ menu }}
+
+<div class="content" id="content">
+  <ul>
+    <li>
+      <div>If you have trouble <strong>while</strong> taking the test
+      (i.e. you cannot submit an answer, the test will not load properly,
+      etc.)</div> 
+      <ul>
+        <li>Make sure your computer satisfies the minimum requirements to take
+        the test. Look at the table under the &quot;All other Higher Education
+        course products&quot; section
+        at <a href="http://www.aleks.com/support/system_requirements">http://www.aleks.com/support/system_requirements</a>.</li> 
+        <li>Check out the troubleshooting
+        page: <a href="http://www.aleks.com/support/troubleshooting">http://www.aleks.com/support/troubleshooting</a>.</li> 
+        <li>You can also browse the FAQs
+        at <a href="http://www.aleks.com/faqs">http://www.aleks.com/faqs</a>.</li> 
+        <li>If this still does not resolve your problem, fill out the support
+        form
+        at <a href="http://support.aleks.com/assess_placement/">http://support.aleks.com/assess_placement/</a>
+        to have an ALEKS support staff member contact you; or, contact them
+        at: (714)&nbsp;619&#8209;7090 and be sure to ask for the placement
+        department.</li> 
+      </ul>
+    </li>
+    <li>
+      <div>If you have a question/problem <strong>before</strong> taking the
+      test (i.e. it says you are not eligible to take the test or some of
+      yourinformation is missing) please contact Connie McClain
+      (<a href="mailto:vmcclai@clemson.edu">vmcclai@clemson.edu</a>).</div> 
+</li>
+    </ul>
+</div>
+
+{{ footer }}
+</div>
+{%- endblock content %}

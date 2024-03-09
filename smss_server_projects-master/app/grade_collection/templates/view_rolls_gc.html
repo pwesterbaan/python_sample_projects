@@ -1,0 +1,18 @@
+{% extends 'gc_layout.html' %}
+
+{% block head -%}
+{% endblock %}
+{%- block content -%}
+
+{{ role_box }}
+{{ menu }}
+<div class="main_content">
+<form method="POST" action="view_rolls">
+{{ offers_dropdown }}
+<input type="submit" value="View Roll">
+<input type="hidden" name="form_name" value="view_rolls">
+<input type="hidden" name="offer_id" value={{offer_id}}>
+</form>
+{{ content }}
+</div>
+{%- endblock content %}

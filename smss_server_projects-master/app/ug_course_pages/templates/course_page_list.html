@@ -1,0 +1,23 @@
+{% extends 'ug_course_pages_layout.html' %}
+
+{% block head -%}
+{% endblock %}
+{%- block content -%}
+
+<div id="main">
+
+  <div id="header">
+    <a href="http://www.clemson.edu/math" title="School Home">
+      <img src="/style/math_logo.png" alt="school logo">
+    </a>
+    <h1>Coordinated Course Pages</h1>
+  </div>
+  
+  <div id="content">
+    <p>You can edit the following course pages. To do so, click on the course
+    name, and the course page editor will open in a new tab or window
+    depending on your browser settings.</p>
+    {{course_list}}
+  </div>
+</div>
+{%- endblock content %}

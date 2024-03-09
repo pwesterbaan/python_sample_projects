@@ -1,0 +1,36 @@
+{% extends 'gc_layout.html' %}
+
+{% block head -%}
+<script type="text/javascript"
+	src="static/scripts/admin_term_end.js"></script>
+{% endblock %}
+{%- block content -%}
+    
+{{ role_box }}
+{{ menu }}
+<div class="main_content">
+
+<table class="action_table">
+    <tr>
+        <td>Semester:</td>
+        <td>Year:</td>
+        <td>Action:</td>
+    </tr>
+    <tr>
+        <td>{{ semester_dropdown }}</td>
+        <td>{{ year_dropdown }}</td>
+        <td>
+          <select name="action" id="action">
+	    <option value="">-- Choose an action --</option>
+            <option value="term_summary">View term summary report</option>
+            <option value="view_data">View end of term data</option>
+          </select>
+          <button type="button" onclick="try_action()">Select</button>
+        </td>
+    </tr>
+</table>
+
+
+<div id="content_pane"></div>
+</div>
+{%- endblock content %}

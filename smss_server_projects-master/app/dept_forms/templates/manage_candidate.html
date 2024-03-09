@@ -1,0 +1,62 @@
+{% extends 'dept_forms_layout.html' %}
+
+{% block head -%}
+{% endblock %}
+{%- block content -%}
+<p>Fill out the following form to add/edit a candidate. You will be able
+  to edit these details again if needed.</p> 
+<form action="manage_candidate" method="POST">
+  <table>
+    <tr>
+      <td class="category_title"><label for="pool_id">Candidate
+	  pool:</label></td>
+      <td>{{pool_dropdown}}</td>
+    </tr>
+    <tr>
+      <td class="category_title"><label for="first_name">First name:</label></td>
+      <td><input type="text" name="first_name" id="first_name"
+		 style="width: 200px;"
+		 value="{{candidate.get('first_name')}}"></td>
+    </tr>
+    <tr>
+      <td class="category_title"><label for="last_name">Last
+	  name:</label></td>
+      <td><input type="text" name="last_name" id="last_name"
+		 style="width: 200px;" value="{{candidate.get('last_name')}}"></td>
+    </tr>
+    <tr>
+      <td class="category_title"><label for="school">School:</label></td>
+      <td><input type="text" name="school" id="school"
+		 style="width: 400px;"
+		 value="{{candidate.get('school')}}"></td>
+    </tr>
+    <tr>
+      <td class="category_title"><label for="visit_dates">Dates
+      visited:</label></td>
+      <td><input type="text" name="visit_dates" id="visit_dates"
+		 value="{{candidate.get('visit_dates')}}"> (format:
+	1/9/12 - 1/10/12 OR 1/9/12)</td> 
+    </tr>
+    <tr>
+      <td class="category_title"><label for="open_date">Evaluations
+	  start:</label></td>
+      <td><input type="text" name="open_date" id="open_date"
+		 style="width: 70px;" value="{{candidate.get('open_date')}}">
+	(format: 1/9/12)</td>
+    </tr>
+    <tr>
+      <td class="category_title"><label for="close_date">Evaluations
+	  end:</label></td>
+      <td><input type="text" name="close_date" id="close_date"
+		 style="width: 70px;" value="{{candidate.get('close_date')}}">
+	(format: 1/9/12)</td>
+    </tr>
+  </table>
+  <div style="text-align: center;">
+    <input type="submit" value="{{btn_name}}">
+    <input type="hidden" name="form_name" value="{{form_action}}">
+    <input type="hidden" name="candidate_id" value="{{candidate_id}}">
+  </div>
+</form>
+
+{%- endblock content %}

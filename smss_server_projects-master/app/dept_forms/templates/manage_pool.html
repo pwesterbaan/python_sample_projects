@@ -1,0 +1,25 @@
+{% extends 'dept_forms_layout.html' %}
+
+{% block head -%}
+{% endblock %}
+{%- block content -%}
+
+<p>Fill out the following form to add/edit a candidate pool. You will be able
+  to edit these details again if needed.</p>
+<form action="manage_pool" method="POST">
+  <table>
+    <tr>
+      <td class="category_title"><label for="description">Description:</label></td>
+      <td>
+	<input type="text" name="description" id="description" style="width: 200px;" value="{{description}}">
+      </td>
+    </tr>
+  </table>
+  <div style="text-align: center;">
+    <input type="submit" value="{{btn_name}}">
+    <input type="hidden" name="form_name" value="{{form_action}}">
+    <input type="hidden" name="pool_id" value="{{pool_id}}">
+  </div>
+</form>
+
+{%- endblock content %}

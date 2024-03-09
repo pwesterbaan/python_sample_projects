@@ -1,0 +1,110 @@
+{% extends 'cmpt_layout.html' %}
+
+{% block head -%}
+<link rel="stylesheet"
+      type="text/css"
+      href="{{url_for('.static',filename='styles/faq.css')}}" >
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript"
+  src="{{url_for('.static',filename='scripts/faq.js')}}"></script>
+
+{% endblock %}
+{%- block content -%}
+    
+<div class="container" id="container">
+{{ header }}
+{{ menu }}
+
+<div class="content" id="content">
+  <p style="font-size: 20px;">Click on the text of the following frequently
+  asked questions to see the answer.</p>
+  <dl>
+    <dt>Do I need to take the CMPT if I have math transfer or AP credit?</dt>
+    <dd>No. Only students wanting to use the CMPT for placement should take
+    the CMPT. </dd> 
+
+    <dt>Can I use my SAT or ACT math scores for math placement, or am I
+    required to take the CMPT? </dt> 
+    <dd>You are not required to take the CMPT. If you meet the prerequisites
+      via SAT math or ACT math for the course you need to take for your major,
+      you do not need to take the CMPT. However, if you do not, and you would
+      like to take the CMPT to try and place into your required math course,
+      you may do so.</dd> 
+
+    <!--<dt>Do I need to use Clemson's proctoring center while the university
+      is closed due to the COVID19 crisis? </dt> 
+    <dd>No, while campus is closed, you will take the CMPT with a computer and
+    webcam, using Respondus Monitor. </dt>-->  
+
+    <dt>I do not have a computer with a webcam. How can I take the placement test?</dt>
+    <dd>We apologize, but at the moment students are only able to take it if
+    they have a working webcam. Perhaps a friend, relative, public library,
+    etc. has one you may use.</dd>      
+
+    <dt>I can't take the CMPT, because it says I am not eligible. What do I do?</dt>
+    <dd>Send an email to Connie McClain, <a href="mailto:vmcclai@clemson.edu">
+    vmcclai@clemson.edu</a>. Include your Clemson UserID and your XID. Please
+    let her know if you are a new student or a continuing student.</dd> 
+
+    <dt>I can't take the test because ALEKS isn't working properly. What can I
+    do?</dt> 
+    <dd><a href="tech_support">Go to our technical support page</a>.</dd>
+
+    <dt>Can I take the placement test after I come to orientation?</dt>
+    <dd>Yes, you may take it after orientation. If you registered for a course
+    at orientation which you later place out of, you can drop the old course
+    and add a new one after all orientation sessions are over.</dd> 
+
+    <dt>When is the last time I may take the CMPT?</dt>
+    <dd>The CMPT is never turned off. You may take it anytime. However, you
+    need to complete it at least two days prior to the last day to add if you
+    intend to register for a course that semester with a CMPT
+    prerequisite.</dd> 
+
+    <dt>I have taken the CMPT once and either want to take it again or want to
+    work on the learning modules. How do I do that?</dt> 
+    <dd>If you click &quot;Go To ALEKS&quot;, you will be taken to the ALEKS
+    website again. This time though, you should have the option to work on the
+    learning modules (top left) or take the test again (top right).</dd> 
+
+    <dt>What course should I take based on my score?</dt>
+    <dd>What course you take depends on your major. Most majors have a
+    required first math course. You should consult the university catalog to
+    see what math course you need to take. Once you know what course you need
+    to start out in, visit the <a href="view_cmpt_score.py">interpretation
+    page</a> to see what CMPT score is required to take that course.</dd> 
+
+    <dt>What if my score isn't high enough to take the course I need?</dt>
+    <dd>
+      <div>You should first try and work through the learning modules to
+      improve your score. If you have already done that, you should take the
+      course you do qualify for that is in the same column as the one you need
+      on our interpretation page.</div> 
+      <div style="margin-top: 14px;"><span style="font-weight:
+      bold;">Note:</span> If your major requires MATH 1020 first and you made
+      between a 50 and a 59, we recommend you take MATH 1990 and 1991 instead
+      of MATH 1010 or STAT 2220. It will better prepare you for MATH
+      1020.</div> 
+      <div style="margin-top: 14px;"><span style="font-weight:
+      bold;">Note:</span> If your major requires STAT 2300 and you made
+      between a 50 and a 59, we recommend you take MATH 1010 or STAT 2220
+      instead of MATH 1990 and 1991.</div> 
+    </dd>
+
+    <dt>I have a question, but it isn't one of these. Whom do I contact?</dt>
+    <dd>
+      <div>If it is a problem with ALEKS: downloading, installing, or taking
+      the test, you will need to contact them. Please see
+      our <a href="tech_support">technical support page</a> for full
+      details.</div> 
+      <div style="margin-top: 14px;">If it is any other question, email
+      Ms. Connie McClain at <a href="mailto:vmcclai@clemson.edu">
+      vmcclai@clemson.edu</a>. Please include your Clemson
+      ID number, Clemson userID, and intended major.</div> 
+    </dd>
+  </dl>
+</div>
+
+{{ footer }}
+</div>
+{%- endblock content %}

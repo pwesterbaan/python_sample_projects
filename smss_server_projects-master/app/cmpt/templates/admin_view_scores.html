@@ -1,0 +1,20 @@
+{% extends 'cmpt_admin_layout.html' %}
+
+{% block head -%}
+<link rel="stylesheet"
+      href="{{url_for('.static',filename='styles/admin_view_scores.css')}}">
+<!--<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
+<script src="/style/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript"
+	src="{{url_for('.static',filename='scripts/admin_view_scores.js')}}"> </script>
+{% endblock %}
+{%- block content -%}
+<div style="margin: 0 auto; text-align: left; margin-top: 40px;">
+<div class="title">View Scores</div>
+{{ menu }}
+{{ cohort_picker }}
+{{ total_count }}
+{{ scores }}
+</div>
+{%- endblock content %}

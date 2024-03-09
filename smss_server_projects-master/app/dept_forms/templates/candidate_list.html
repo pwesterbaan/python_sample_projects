@@ -1,0 +1,25 @@
+{% extends 'dept_forms_layout.html' %}
+
+{% block head -%}
+{% endblock %}
+{%- block content -%}
+
+<div style="margin-top: 10px; text-align: center;">
+  <a href="manage_candidate" style="margin: 5px;">Add New Candidate</a>
+  <a href="pool_list" style="margin: 5px;">Candidate Pools</a>
+  <a href="candidate_settings" style="margin: 5px;">Candidate Settings</a>
+</div>
+<hr>
+<div style="text-align: center; font-size: 40px; font-weight: bold;">
+{{ pool_description }}
+</div>
+<div style="margin-top: 15px;">
+  <form action="candidate_list" method="POST">
+    <label for="pool_id">Select Pool: </label>
+    {{ pool_dropdown }}
+    <input type="submit" value="View Candidates">
+  </form>
+</div>
+{{ candidate_list }}
+
+{%- endblock content %}

@@ -1,0 +1,46 @@
+{% extends 'gc_layout.html' %}
+
+{% block head -%}
+<script type="text/javascript"
+	src="static/scripts/reports.js"></script>
+{% endblock %}
+{%- block content -%}
+    
+{{ role_box }}
+{{ menu }}
+<div class="main_content">
+
+<table class="action_table">
+    <tr>
+        <td>Semester:</td>
+        <td>Year:</td>
+        <td>Section:</td>
+        <td>Item:</td>
+        <td>Report:</td>
+    </tr>
+    <tr>
+        <td>{{ semester_dropdown }}</td>
+        <td>{{ year_dropdown }}</td>
+        <td>{{ offers_dropdown }}</td>
+        <td><select name="exam_id" id="exam_id" onchange="try_action()"></select></td>
+        <td>
+            <select name="action" id="action" onchange="try_action()">
+                <option value="">-- Choose a report --</option>
+                <option value="view_keys">View version keys</option>
+                <option value="mc_section_item_report">MC individual section item report</option>
+                <option value="mc_course_item_report">MC all sections item report</option>
+                <option value="mc_course_report">MC all sections summary (anonymous)</option>
+                <option value="fr_section_item_report">FR individual section item report</option>
+                <option value="fr_course_item_report">FR all sections item report</option>
+                <option value="fr_course_report">FR all sections summary (anonymous)</option>
+                <option value="overall_course_report">MC+FR all sections summary (anonymous)</option>
+            </select>
+            <button type="button" onclick="try_action()">Select</button>
+        </td>
+    </tr>
+</table>
+
+
+<div id="content_pane"></div>
+</div>
+{%- endblock content %}

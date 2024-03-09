@@ -1,0 +1,16 @@
+{% extends 'gc_layout.html' %}
+
+{% block head -%}
+<script type="text/javascript"
+	src="static/scripts/jquery.maskedinput.js"></script>
+<script type="text/javascript"
+	src="static/scripts/manage_exams.js"></script>
+{% endblock %}
+{%- block content -%}
+    
+{{ role_box }}
+{{ menu }}
+<div class="main_content" id="main_content">
+{{ content }}
+</div>
+{%- endblock content %}

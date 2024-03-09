@@ -1,0 +1,24 @@
+<Files "admin-*.php">
+	AuthType shibboleth
+	ShibRequestSetting requireSession 1
+	require user HEDETNI # Kevin Hedetniemi
+	require user JDYKEN
+	require user vmcclai #Connie McClain
+</Files>
+
+<Files "*">
+	AuthType shibboleth
+	ShibRequestSetting requireSession 1
+	require valid-user
+</Files>
+
+
+<Files "teaching-pref-functions.php">
+	order deny,allow
+	deny from all
+</Files>
+
+#redirect for directory maintenance
+Options +FollowSymLinks
+RewriteEngine on
+#RewriteRule index.php http://mthsc.clemson.edu/ug_opportunities/maintenance.php [R=307,L] 

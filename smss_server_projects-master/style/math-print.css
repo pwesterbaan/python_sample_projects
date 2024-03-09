@@ -1,0 +1,380 @@
+body { 
+	background: #b3ada9; 
+	background-attachment: fixed; 
+	background-size: 100% 100%; 
+	color: #333;
+	font-family: 'Trade Gothic', Arial, Helvetica, sans-serif;
+	font-size:16px;
+}
+a {
+	color: #522D80;
+}
+a:hover {
+	color: #F66733;
+}
+div#main {
+	width: 90%; 
+	margin: 0 auto; 
+	text-align: left;
+	padding: 8px; 
+	margin-top: 1.5em;
+}
+div#header {
+	display:none;
+	overflow:auto;
+	padding-bottom:1.25em;
+}
+div#header img {
+	border: none;
+	float:left;
+}
+div#header h1 {
+	font-weight:normal;
+	float:right;
+	-webkit-border-radius: 30px; 
+	-moz-border-radius: 30px; 
+	border-radius: 30px;
+	text-align:right;
+	padding:0.1em 1em;
+	font-size:1.7em;
+	line-height:1.4em;
+	display:inline-block;
+	margin-top:0.5em;
+	color: white;
+	background-color:#109DC0;
+}
+div#header span {
+	position: relative; 
+	top: 3em; 
+	right: 10px; 
+	float: right;
+	-webkit-border-radius: 30px; 
+	-moz-border-radius: 30px; 
+	border-radius: 30px;
+	padding:0.5em 1em;
+	background-color:#109DC0;
+}
+div#header h1 a, div#header span a {
+	text-decoration:none;
+	color: white;
+}
+div#header span a:hover {
+	color:#522D80;
+}
+div#content {
+	overflow:auto;
+	margin-top: 0.5em;
+	padding:1.5em;
+	border-top:1em solid #109DC0;
+	background-color: rgba(255, 255, 255, 0.7);
+	line-height:1.25em;
+}
+
+#content h1,h2,h3,h4,h5,h6 {
+	color:#522D80;
+}
+#content h1 {
+	font-weight:normal;
+	margin-top:0.5em;
+	line-height:1.1em;
+}
+#content h2 {
+	line-height:1.1em;
+}
+table {
+	border:0px outset #444;
+	border-collapse:collapse;
+}
+.clear, table.clear tr, table.clear td, table td.clear {
+	background-color:transparent;
+	border:0px;
+}
+table td {
+	padding: 3px 6px;
+	border: 1px inset #444;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+table td {
+	padding:4px 7px;
+}
+table th {
+	font-weight:bold;
+	text-align:center;
+	padding: 3px 6px;
+	border: 1px inset #444;
+	background-color:#fff;
+}
+div#footer {
+	text-align: center; 
+	margin-top: 10px;
+	color:#444;
+	font-size:0.95em;
+}
+div#footer a {
+	color:white;
+}
+div#footer a:hover {
+	color:#F66733;
+}
+p#error {
+	color: #109DC0;
+	font-weight:bold;
+	font-size:20px;
+}
+select {
+	font-size:1em;
+}
+
+input,textarea {
+	font-size: 0.9em;
+}
+ol, ul {
+	line-height:1.35em;
+}
+
+
+/* DIRECTORY */
+
+table.directory {
+	width:95%;
+	margin-right:auto;
+	margin-left:auto;
+	border: 0px outset #444;
+	border-collapse:collapse;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+table.directory td,th {
+	padding: 3px 6px;
+	border: 1px inset #444;
+}
+table.directory td {
+	padding:4px 7px;
+}
+table.directory td a {
+	text-decoration:underline;
+}
+table.directory th {
+	font-weight:bold;
+	text-align:center;
+	background-color:#fff;
+}
+div.bigBox {
+	width: 35%;
+	height: 150px;
+	margin-bottom:50px;
+	background-color: rgba(255, 255, 255, 0.6);
+	border: 2px solid #3A4958; 
+	border: 2px solid #777;
+	font-size: 30px;
+	line-height: 150px; 
+	text-align: center;
+	color: #522D80;
+}
+div.bigBox span {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;
+}
+div#menu {
+	clear:both;
+	text-align:center;
+	-webkit-border-radius: 30px; 
+	-moz-border-radius: 30px; 
+	border-radius: 30px;
+	width:65%;
+	min-width:675px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:0.5em;
+	margin-bottom:1em;
+	color:white;
+	background-color:#522D80;
+}
+div#menu a {
+	padding-right:.7em;
+	padding-left:.7em;
+	font-size:1.5em;
+	line-height:1.6em;
+	text-decoration:none;
+	color:white;
+	display:inline-block;
+}
+div#menu a.active {
+	background-color:#FFF;
+	color:#F66733;
+}
+div#menu a:hover {
+	color:#F66733;
+}
+div#details {
+	padding:1em;
+	float:right;
+	font-size:1.25em;
+	line-height:1.3em;
+	margin-bottom:2em;
+	margin-right:10%;
+	margin-left:5%;
+	text-align:right;
+	color:#555;
+}
+div#details img {
+	margin-bottom:2em;
+}
+div#contact {
+	border-top: 1px solid #522D80;
+	padding-top: 1em;
+}
+div#info {
+	margin-left:10%;
+	margin-right:10%;
+}
+div#info h1 {
+	font-weight:normal;
+	font-size:2.5em;
+	color:#522D80;
+}
+div.heading {
+	margin-bottom:0.5em;
+	font-weight:bold;
+}
+div.field {
+	margin-bottom:1.35em;
+	line-height:1.35em;
+}
+div#updated {
+	background-color:rgba(255, 255, 255, 0.7);
+	text-align:center;
+	padding:0.5em;
+}
+
+
+/* LOCATOR */
+
+form#add_event_form table {
+	background-color:transparent;
+}
+form#add_event_form th {
+	border:0px;
+	text-align:center;
+	background-color:transparent;
+}
+form#add_event_form td {
+	text-align:center;
+	padding-left:0.5em;
+	padding-right:0.5em;
+	border:0px;
+	background-color:transparent;
+}
+form#add_event_form select,form#add_event_form input {
+	font-size:1em;
+}
+table#event_list, table#classes {
+	background-color:transparent;
+	border-collapse: collapse;
+}
+table#event_list th, table#classes th {
+	border:1px inset #333;
+	padding:0.5em;
+	background-color:#fff;
+}
+table#event_list td, table#classes td {
+	border:1px inset #333;
+	padding:0.5em;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+div.day_header {
+	font-size:1.25em;
+	text-align:center;
+	border-bottom:1px solid #3A4958;
+	padding:0.5em;
+}
+div#weekly_calendar {
+	height:700px;
+	border:2px solid #3A4958;
+	border-right:0px;
+	overflow:visible;
+	width: calc(100% - 2px);
+}
+div.day {
+	width: calc(20% - 2px);
+	float:left;
+	height:700px;
+	border-right:2px solid #3A4958;
+}
+div.list {
+	position:relative;
+}
+div.event {
+	border-top:1px solid #3A4958;
+	border-bottom:1px solid #3A4958;
+	width:100%;
+	text-align:center;
+	font-size:14px;
+	line-height:14px;
+	background-color:rgba(31, 44, 56, 0.4);
+	background-color:rgba(255, 255, 255, 0.75);
+	margin-top:-1px;
+	overflow:hidden;
+}
+table#classes {
+	text-align:center;
+}
+
+
+/* UG COURSE PAGES */
+
+h1#course_title {
+	text-align:center;
+	margin-bottom:0.25em;
+}
+h4#course_description {
+	text-align:center;
+	margin-top:0px;
+	font-weight:normal;
+}
+div#course_page_footer {
+	margin:0.5em 1em 3em 1em;
+}
+span#updated {
+	float:left;
+}
+span#comments {
+	float:right;
+}
+div.content {
+	margin-bottom:1.35em;
+	line-height:1.35em;
+}
+div.course_page_heading {
+	margin-bottom:0.5em;
+	font-weight:bold;
+	font-size:1.15em;
+}
+div.course_page_field {
+	margin-bottom:1.35em;
+	line-height:1.35em;
+	padding-left:1em;
+}
+
+
+/** CES BRANDING COLORS **/
+.orangeBG { background-color: #EA6A20; }
+.blueRidgeBG { background-color: #3A4958; }
+.innovationBG { background-color: #86898C; }
+.regaliaBG { background-color: #522D80; }
+.moonBG { background-color: #D4C99E; }
+.brickBG { background-color: #A25016; }
+.rockBG { background-color: #685C53; }
+.orangeTxt { color: #EA6A20; }
+.blueRidgeTxt { color: #3A4958; }
+.innovationTxt { color: #86898C; }
+.regaliaTxt { color: #522D80; }
+.moonTxt { color: #D4C99E; }
+.brickTxt { color: #A25016; }
+.rockTxt { color: #685C53; }
+.whiteTxt { color: white }
+
+/** SCIENCE BRANDING COLORS **/
+.orangeTxt { color: #f66733 }
+.gameDayTxt { color: #109DC0 }
+.purpleTxt { color: #522d80 }

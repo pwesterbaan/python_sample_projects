@@ -1,0 +1,89 @@
+Options +ExecCGI
+AddHandler cgi-script .py
+DirectoryIndex course_pages.py
+
+<Files "course_page_list.py">
+	AuthType shibboleth
+	ShibRequireSession on
+	require valid-user
+</Files>
+
+<Files "edit_course_page.py">
+	AuthType shibboleth
+	ShibRequireSession on
+	require valid-user
+</Files>
+
+<Files "manage_content.py">
+	AuthType shibboleth
+	ShibRequireSession on
+	require valid-user
+</Files>
+
+<Files "course_page_AJAX.py">
+	AuthType shibboleth
+	ShibRequireSession on
+	require valid-user
+</Files>
+
+<Files "view_item.py">
+	AuthType shibboleth
+	ShibRequireSession on
+	require valid-user
+</Files>
+
+<Files "admin.php">
+	AuthType shibboleth
+	ShibRequireSession on
+	require user HEDETNI
+	require user JDYKEN
+	require user EHEPFER
+	require user MJS
+	require user pwester
+</Files>
+
+<Files "*.tmpl">
+        order deny,allow
+        deny from all
+</Files>
+
+# redirect for maintenance
+Options +FollowSymLinks
+RewriteEngine on
+#RewriteRule ^(.*) http://mthsc.clemson.edu/upgrade.html [R=307,L]
+
+#RewriteCond %{REQUEST_URI} !^/ug_course_pages/maintenance.html$
+#RewriteRule .* https://mthsc.clemson.edu/ug_course_pages/maintenance.html [R=307,L]
+
+RewriteRule MTHS1010 view_course_page.py?course_id=1 [L]
+RewriteRule MTHS1020 view_course_page.py?course_id=2 [L]
+RewriteRule MTHS1040 view_course_page.py?course_id=91 [L]
+RewriteRule MTHS1060 view_course_page.py?course_id=6 [L]
+RewriteRule MTHS1070 view_course_page.py?course_id=7 [L]
+RewriteRule MTHS1080 view_course_page.py?course_id=8 [L]
+RewriteRule MTHS2070 view_course_page.py?course_id=23 [L]
+RewriteRule MTHS3090 view_course_page.py?course_id=29 [L]
+
+RewriteRule MATH1010 view_course_page.py?course_id=1 [L]
+RewriteRule MATH1020 view_course_page.py?course_id=2 [L]
+RewriteRule MATH1040 view_course_page.py?course_id=91 [L]
+RewriteRule MATH1060 view_course_page.py?course_id=6 [L]
+RewriteRule MATH1070 view_course_page.py?course_id=7 [L]
+RewriteRule MATH1080 view_course_page.py?course_id=8 [L]
+RewriteRule MATH2070 view_course_page.py?course_id=23 [L]
+RewriteRule MATH3090 view_course_page.py?course_id=29 [L]
+RewriteRule STAT3090 view_course_page.py?course_id=225 [L]
+RewriteRule STAT2300 view_course_page.py?course_id=226 [L]
+
+RewriteRule math1010 view_course_page.py?course_id=1 [L]
+RewriteRule math1020 view_course_page.py?course_id=2 [L]
+RewriteRule math1040 view_course_page.py?course_id=91 [L]
+RewriteRule math1060 view_course_page.py?course_id=6 [L]
+RewriteRule math1070 view_course_page.py?course_id=7 [L]
+RewriteRule math1080 view_course_page.py?course_id=8 [L]
+RewriteRule math2070 view_course_page.py?course_id=23 [L]
+RewriteRule math3090 view_course_page.py?course_id=29 [L]
+RewriteRule stat3090 view_course_page.py?course_id=225 [L]
+RewriteRule stat2300 view_course_page.py?course_id=226 [L]
+
+RewriteRule view_item.py view_item.php

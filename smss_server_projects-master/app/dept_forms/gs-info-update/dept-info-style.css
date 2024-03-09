@@ -1,0 +1,116 @@
+input,select {margin:0.1em}
+input::-webkit-contacts-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  pointer-events: none;
+  height: 0;
+  width: 0;
+  margin: 0;
+}
+div.section {
+	border:1px solid #109DC0;
+	margin-top:0.8em;
+	margin-bottom:1.2em;
+}
+div.section_heading {
+	color:white;
+	background-color:#109DC0;
+	margin:0;
+	padding:0em 0.4em;
+	font-family:'Source Sans Pro',sans-serif;
+	font-weight:600;
+	text-transform:uppercase;
+	font-size:1.05em;
+	line-height:1.4;
+}
+div.section_heading a {
+	color:white;
+	font-size:0.9em;
+}
+div.section_heading a:hover  {color:#f66733;}
+div.section_content {
+	padding:0.6em;
+	padding-bottom:0.25em;
+}
+div.section_content table td.field {
+	color:#666;
+}
+div.section_content table td, div.section_content table th {
+	border:1px solid #ccc;
+	padding:0.2em 0.5em;
+}
+div.section_content table{border-collapse:collapse;margin-bottom:1em;}
+div.section_content p {margin-top:0em;margin-bottom:0.25em}
+p.indent {
+	padding-left:1em;
+}
+
+span#username {
+	color:#f66733;
+	font-family:'Source Sans Pro',sans-serif;
+	font-weight:600;
+	text-transform:uppercase;
+	font-size:0.8em;
+}
+h1 span.tag {
+	color:white;
+	font-family:'Source Sans Pro',sans-serif;
+	font-weight:600;
+	text-transform:uppercase;
+	font-size:0.6em;
+	padding:0px 5px;
+}
+span.small_tag {
+	color:white;
+	font-family:'Source Sans Pro',sans-serif;
+	font-weight:600;
+	text-transform:uppercase;
+	font-size:1em;
+	padding:0px 5px;
+}
+span.faculty_tag {
+	background-color:#f66733;
+}
+span.student_tag {
+	background-color:#522D80;
+}
+span.staff_tag {
+	background-color:#b3ada9;
+}
+a.role_link {
+	text-decoration:none;
+}
+
+
+label {color:#666}
+
+a.remove_link:hover, button.remove_link:hover, button.add_link:hover, a.add_link:hover {
+	text-shadow:2px 2px #ccc;
+}
+a.remove_link, button.remove_link, a.add_link, button.add_link {
+	text-decoration:none;
+	margin-right:1em;
+	border:none;
+	background-color:inherit;
+	padding:0 !important;
+	color:inherit;
+	cursor: pointer;
+}
+button.add_link {
+	color:limegreen;
+	font-size:1.5em;
+}
+div.address_remove {
+	padding-left:1em;
+	display:inline-block;
+	vertical-align:top;
+}
+div.address {
+	display:inline-block;
+	margin-bottom:0.5em;
+	margin-right:1.5em;
+}
+a.close{
+	text-decoration:none;
+	margin-right:0.5em;
+}

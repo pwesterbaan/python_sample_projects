@@ -1,0 +1,65 @@
+{% extends 'cmpt_layout.html' %}
+
+{% block head -%}
+<link rel="stylesheet"
+      href="{{url_for('.static',filename='styles/cmpt.css')}}"> 
+<script type="text/javascript"
+	src="{{url_for('.static',filename='scripts/claim_credit.js')}}"></script>
+{% endblock %}
+{%- block content -%}
+<div class="container">
+  {{header}}
+<div class="content">
+  <form action="claim_credit" method="POST" name="claimed_credit_form" onSubmit="return check_fields();">
+	<p>Please supply the following information to claim transfer credit not yet <b>officially</b> recorded by the university.</p>
+	<p>This form must be submitted prior to the last day to add a class if the requested transfer credit is required to meet course prerequisites. Otherwise, you may be dropped from your current Clemson course.</p>
+	<p>Note: You will receive warnings near the middle and end of the semester if this transfer credit has not become official, but it is <b>your</b> responsibility to supply the required transfer credit information to the university.</p>
+	<p>False information submitted via this form will be viewed as a violation of Clemson University's "<a href="http://www.clemson.edu/academics/academic-integrity/">Statement of Academic Integrity</a>" and treated accordingly.</p>
+	<hr>
+	<h3>All fields must be completed correctly for this form to be processed!</h3>
+	<div style="border: solid #FF6633; background-color: #FFFFCC; padding: 5px; width: 600px;">This form should only be filled out if you have transfer credit from another school or AP/IB credit. If this is not the case, you do not need to fill out this form.</div>
+	<h4>Student information:</h4>
+	<p>Your full name (Last First MI):<br>
+	<input type="text" id="RealName" name="RealName" size=50></p>
+	<p>XID (&quot;C&quot; + 8 numbers; ex. C12345678):<br>
+	<input type="text" id="XID" name="XID" size="15" maxlength="9"></p>
+	<hr>
+	<h4>Transfer credit information:</h4>
+	<p>I am claiming credit for Clemson University course Math Sciences XXXX (not the course you want to take but the prerequisite course):<br>
+	<select id="CreditCourse" name="CreditCourse">
+		<option value="0" selected>(course number)</option>
+		<option value="1010">MATH 1010</option>
+		<option value="1020">MATH 1020</option>
+		<option value="1030">MATH 1030</option>
+		<option value="1050">MATH 1050</option>
+		<option value="1060">MATH 1060</option>
+		<option value="1080">MATH 1080</option>
+		<option value="1170">MATH 1170</option>
+		<option value="1990">MATH 1990</option>
+		<option value="2030">MATH 2030</option>
+		<option value="2060">MATH 2060</option>
+		<option value="2070">MATH 2070</option>
+		<option value="2080">MATH 2080</option>
+		</select>
+	</p>
+
+	<p>Type of transfer credit:<br>
+	<input type="radio" name="CreditType" value="AP">(AP) Advanced Placement<br>
+	<input type="radio" name="CreditType" value="IB">(IB) International Bacculareate<br>
+	<input type="radio" name="CreditType" value="Non-CU_Course">Non-Clemson course</p>
+
+	<p>Transfer credit details (limit 500 characters)<br>
+	For AP/IB credit, give examination name and score;<br>
+	For non-Clemson courses, list the institution granting credit, the name and number of the course, and your grade in the course.<br>
+	<textarea id="Details" name="Details" rows=6 cols=70></textarea></p>
+
+	<h4>Be sure that your data is correct prior to submitting this form. In particular, if your XID is incorrect, the information you supply may not be processed.</h4>
+	<div style="text-align: center; margin-bottom: 10px;">
+		<input name="submit" type="submit" value="Submit Form">
+		<input type="hidden" name="form_name" value="claim_credit">
+	</div>
+    </form>
+</div>
+{{ footer }}
+</div>
+{%- endblock content %}

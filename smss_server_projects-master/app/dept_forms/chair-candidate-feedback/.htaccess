@@ -1,0 +1,49 @@
+Options +ExecCGI
+
+<Files *>
+	AuthType shibboleth
+	ShibRequireSession On
+	require primary-affiliation employee
+</Files>
+
+<Files "submissions.php">
+	AuthType shibboleth
+	ShibRequireSession On
+	require user HEDETNI
+	require user REBHOLZ
+	require user LCALLA
+	require user KIESSLP
+	require user MACAULE
+	require user JRYOON
+	require user JDYKEN
+	require user czerfas
+	require user lbozema
+	require user LBOZEMA
+	require user CZERFAS
+</Files>
+
+<Files "view-candidate-responses.php">
+	AuthType shibboleth
+	ShibRequireSession On
+	require user HEDETNI
+	require user REBHOLZ
+	require user LCALLA
+	require user KIESSLP
+	require user MACAULE
+	require user JRYOON
+	require user JDYKEN
+	require user czerfas
+	require user lbozema
+	require user LBOZEMA
+	require user CZERFAS
+</Files>
+
+<Files "template.php">
+	order deny,allow
+	deny from all
+</Files>
+
+#redirect for directory maintenance
+Options +FollowSymLinks
+RewriteEngine on
+#RewriteRule index.php http://mthsc.clemson.edu/ug_opportunities/maintenance.php [R=307,L] 

@@ -1,0 +1,51 @@
+Options +ExecCGI
+AddHandler cgi-script .py
+
+<Files "*">
+	AuthType shibboleth
+	ShibRequireSession on
+	require valid-user
+</Files>
+
+<Files "index.php">
+	AuthType shibboleth
+	ShibRequireSession on
+	require valid-user
+</Files>
+
+<Files "submissions.php">
+	AuthType shibboleth
+	ShibRequireSession on
+	require user HEDETNI # Kevin Hedetniemi
+	require user CLCOX #Chris Cox
+	require user LCALLA #Lynn Callahan
+	require user ssather #Sean Sather-Wagstaff
+	require user CGALLAG #Colin Gallager
+</Files>
+
+<Files "view_submission.php">
+	AuthType shibboleth
+	ShibRequireSession on
+	require user HEDETNI # Kevin Hedetniemi
+	require user CLCOX #Chris Cox
+	require user LCALLA #Lynn Callahan
+	require user ssather #Sean Sather-Wagstaff
+	require user CGALLAG #Colin Gallager
+</Files>
+
+<Files "view_responses.php">
+	AuthType shibboleth
+	ShibRequireSession on
+	require user HEDETNI # Kevin Hedetniemi
+	require user CLCOX #Chris Cox
+	require user LCALLA #Lynn Callahan
+	require user ssather #Sean Sather-Wagstaff
+	require user CGALLAG #Colin Gallager
+</Files>
+
+
+
+#redirect for directory maintenance
+Options +FollowSymLinks
+RewriteEngine on
+#RewriteRule index.php http://mthsc.clemson.edu/ug_opportunities/maintenance.php [R=307,L] 

@@ -1,0 +1,45 @@
+{% extends 'ferpa_layout.html' %}
+{% import 'macros.html' as macros %}
+
+<!-- page specific body content -->
+{% block content %}
+<div style="margin-left: 8px; margin-right: 8px; margin-bottom: 10px;"><span style="font-weight: bold; font-size: 18px;">Directions:</span> Fill out the fields below, then click the View Forms button to search for FERPA forms.
+  <ul>
+    <li>Fields left blank will be ignored.</li>
+    <li>The % wildcard may be used to match any number of characters (including 0 characters)</li>
+    <li>To view all uploaded forms, choose Any for the semester and year and leave the other fields blank.</li>
+  </ul>
+</div>
+<div style="margin: 8px;">
+  <form method="POST" action="ferpa_view" id="ferpa_view">
+    <table>
+      <tr>
+        <td><label for="semester">Semester</label></td>
+        <td><label for="year">Year</label></td>
+        <td><label for="last_name">Last Name</label></td>
+        <td><label for="cuid">CUID</label></td>
+      </tr>
+      <tr>
+        <!--Semester dropdown menu -->
+        <td>
+          {{ macros.dropdown_menu(semester_dict, "semester", selected=selected_semester) }} 
+        </td>
+        <!--Year dropdown menu -->
+        <td>
+          {{ macros.dropdown_menu(year_dict, "year", selected=selected_year) }}
+        </td>
+        <!--Last Name and CUID textboxes -->
+        <td><input type="text" name="last_name" id="last_name" value="{{last_name}}"></td>
+        <td><input type="text" name="cuid" id="cuid" value="{{cuid}}"></td>
+      </tr>
+    </table>
+    <input type="submit" value="View Forms">
+    <input type="hidden" name="action" value="ferpa_view">
+  </form>
+</div>
+{% if form_data['action'] == 'ferpa_view' or form_data['method'] == 'delete'%}
+{{ macros.ferpa_view_table(forms, username, user_role, selected_semester,
+selected_year, last_name, cuid) }}
+{% endif %}
+</div>
+{% endblock %}

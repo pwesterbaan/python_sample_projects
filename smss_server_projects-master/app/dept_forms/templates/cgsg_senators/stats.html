@@ -1,0 +1,24 @@
+{% extends 'cgsg_senators_layout.html' %}
+{% block head -%}
+{% endblock %}
+{%- block content -%}
+
+<body style="background-color: #666666;">
+    <div style="width: 800px; margin: 0px auto; background: #FFFFFF;  padding:
+    8px; border: ridge #666666 4px;">
+        <div style="border: solid 2px #000000; padding: 10px; background:
+        #F66733; text-align: center; color: #FFFFFF; font-family: sans-serif;
+        font-size: 30px;">CGSG Senator Vote
+        </div>
+        <div style="border-left: solid 2px #000000; border-right: solid 2px
+        #000000; padding: 10px; text-align: center; font-weight: bold;
+        font-size: 24px;">Voting Totals
+        </div>
+        <div style="border: solid 2px #000000; padding: 10px 25px;">
+{{content}}
+        </div>
+        <div style="text-align: center; margin-top:
+        15px;">[Click <a href="/dept_forms/website_error"
+        target="_blank">here</a> to report a problem with the website.]</div>
+    </div>
+{%- endblock content %}

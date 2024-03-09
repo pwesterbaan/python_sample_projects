@@ -1,0 +1,28 @@
+.add_section
+{
+    border: solid 2px #000000;
+    border-top: 0px;
+    padding: 15px;
+}
+
+.add_header
+{
+    border: solid 2px #000000;
+    background: #522D80;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-family: sans-serif;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.add_header:hover
+{
+    background: #F66733;
+}
+
+.upload_btn_section
+{
+    text-align: center;
+    margin-top: 15px;
+}

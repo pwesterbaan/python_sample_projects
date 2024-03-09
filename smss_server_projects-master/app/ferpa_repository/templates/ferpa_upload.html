@@ -1,0 +1,53 @@
+{% extends 'ferpa_layout.html' %}
+{% import 'macros.html' as macros %}
+<!-- page specific body content -->
+{% block content %}
+<p style="margin-left: 8px; margin-right: 8px; margin-bottom:
+          20px;"><span style="font-weight: bold; font-size:
+			      18px;">Directions:</span> {{ directions  }}
+</p>
+<form method="POST" action="{{ buttonAction }}" enctype="multipart/form-data">
+  <table style="margin: 0px auto;">
+    <tr>
+      <td><label for="semester">Current Semester</label>:</td>
+      <td>
+	{{ macros.dropdown_menu(semester_dict, "semester",
+	selected=selected_semester) }}
+      </td>
+    </tr>
+    <tr>
+      <td><label for="year">Current Year</label>:</td>
+      <td> {{ macros.dropdown_menu(year_dict, "year", selected=selected_year) }}</td>
+    </tr>
+    <tr>
+      <td><label for="cuid">Student CUID</label>:</td>
+      <td><input type="text" name="cuid" id="cuid" style="width: 80px;"
+		 value="{{cuid}}" required maxlength="9"></td>
+    </tr>
+    <tr>
+      <td><label for="first_name">Student first name</label>:</td>
+      <td><input type="text" name="first_name" id="first_name" value="{{first_name}}"
+                 required></td>
+    </tr>
+    <tr>
+      <td><label for="last_name">Student last name</label>:</td>
+      <td><input type="text" name="last_name" id="last_name"
+		 value="{{last_name}}" required></td>
+    </tr>
+    <tr>
+      <td><label for="ferpa_file">FERPA form</label>: </td>
+      <td>{{ uploadMessage }}<input type="file" name="ferpa_file"
+				    id="ferpa_file" accept="application/pdf"
+				    {{ fileRequired }}></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: center;">
+        <input type="submit" value="{{ buttonText }}" style="margin-top:
+							     30px;">
+	<input type="hidden" name="form_id" value="{{ form_id }}" > 
+        <input type="hidden" name="form_name" value="{{ buttonValue }}">
+      </td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

@@ -1,0 +1,27 @@
+Options +ExecCGI
+
+<Files *>
+	AuthType shibboleth
+	ShibRequireSession On
+	require primary-affiliation employee
+</Files>
+
+<Files "admin.php">
+	AuthType shibboleth
+	ShibRequireSession On
+	require user HEDETNI
+	require user cyyoung
+	require user snhenni
+	require user lgehrin
+	require user MEL
+</Files>
+
+<Files "template.php">
+	order deny,allow
+	deny from all
+</Files>
+
+#redirect for directory maintenance
+Options +FollowSymLinks
+RewriteEngine on
+#RewriteRule index.php http://mthsc.clemson.edu/ug_opportunities/maintenance.php [R=307,L] 

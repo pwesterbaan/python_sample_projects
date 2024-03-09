@@ -1,0 +1,16 @@
+<Files "*">
+	AuthType shibboleth
+	ShibRequestSetting requireSession 1
+	require valid-user
+</Files>
+
+
+<Files "visitor-approval-functions.php">
+	order deny,allow
+	deny from all
+</Files>
+
+#redirect for directory maintenance
+Options +FollowSymLinks
+RewriteEngine on
+#RewriteRule index.php http://mthsc.clemson.edu/ug_opportunities/maintenance.php [R=307,L] 

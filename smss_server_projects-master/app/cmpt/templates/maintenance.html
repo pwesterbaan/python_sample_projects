@@ -1,0 +1,22 @@
+{% extends 'cmpt_layout.html' %}
+
+{% block head -%}
+<link rel="stylesheet"
+      type="text/css"
+      href="{{url_for('.static',filename='styles/cmpt.css')}}" >
+
+{% endblock %}
+{%- block content -%}
+    
+<div class="container" id="container">
+{{ header }}
+{{ menu }}
+<div class="content" id="content">
+  <p style="margin: 20px auto; padding: 20px; width: 300px; border: solid 4px
+  #522D80;">The CMPT is down at the moment. We are experiencing technical
+  difficulties, and are working on a resolution. We apologize for the
+  inconvenience.</p>
+</div>
+{{ footer }}
+</div>
+{%- endblock content %}

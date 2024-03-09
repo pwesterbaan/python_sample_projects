@@ -1,0 +1,36 @@
+a:link
+{
+    color: #9900FF
+}
+
+a:visited
+{
+    color: #F66733
+}
+
+a:active
+{
+    color: #9900FF
+}
+
+.voting
+{
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.names_table
+{
+    margin: 0px auto;
+}
+
+.names_table tr:first-child td
+{
+    text-align: center;
+    font-weight: bold;
+}
+
+.names_table tr td:last-child
+{
+    padding-left: 30px;
+}

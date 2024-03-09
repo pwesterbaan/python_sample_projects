@@ -1,0 +1,28 @@
+{% extends 'dept_forms_layout.html' %}
+
+{% block head -%}
+{% endblock %}
+{%- block content -%}
+
+<div style="margin-top: 15px; text-align: center; font-size: 30px;
+	    font-weight: bold;">{{candidate_name}}</div>
+<div style="margin-bottom: 0px; text-align: center; font-size:
+	    20px;">{{candidate_school}}</div>
+<div style="margin-bottom: 15px; text-align: center; font-size:
+	    14px;">[visited: {{candidate_visit_dates}}]</div>
+<hr>
+<p>Please answer the following questions regarding the candidate listed
+  above. You will only get one chance to submit your evaluation since the
+  results are anonymous. We will record that you submitted an evaluation, but
+  your name will not be linked to your evaluation.</p>
+<form action="evaluate_candidate" method="POST">
+  {{form_data}}
+  <div style="text-align: center; margin-top: 20px;">
+    <input type="submit" value="Submit Evaluation">
+    <input type="hidden" name="candidate_id" value="{candidate_id}">
+    <input type="hidden" name="form_id" value="{form_id}">
+    <input type="hidden" name="evaluate_form_submit" value="1">
+  </div>
+</form>
+
+{%- endblock content %}

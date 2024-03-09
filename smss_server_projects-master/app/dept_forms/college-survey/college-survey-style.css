@@ -1,0 +1,24 @@
+td.center {
+	text-align:center;
+}
+table.h_question {
+	width:75%;
+	table-layout:fixed;
+}
+input[type=submit], input[type=reset] {
+	font-size:2.5em;
+}
+div.question
+{
+	border:1px solid gray;
+	background-color:rgba(255,255,255,0.4);
+	padding:0em 0.5em;
+	margin-bottom:1em;
+}
+div.free_response
+{
+	border:1px solid lightgray;
+	background-color:rgba(255,255,255,0.4);
+	padding:0.2em 0.5em;
+	margin-bottom:0.5em;
+}

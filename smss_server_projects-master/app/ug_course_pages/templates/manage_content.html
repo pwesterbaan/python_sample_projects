@@ -1,0 +1,42 @@
+{% extends 'ug_course_pages_layout.html' %}
+
+{% block head -%}
+{% endblock %}
+{%- block content -%}
+<div id="main">
+
+  <div id="header">
+    <a href="http://www.clemson.edu/math" title="School Home">
+      <img src="/style/math_logo.png" alt="school logo">
+    </a>
+    <h1>Manage Content for {{course_title}}</h1>
+  </div>
+
+  <div id="content">
+    <h2>Upload New Content</h2>
+    <form method="POST" action="/ug_course_pages/manage_content/{{course_id}}" enctype="multipart/form-data">
+      <ol style="margin-left: 15px; font-size: 24px;">
+	<li style="margin-bottom: 20px;">
+	  <div style="font-size: 16px;">Select a file from your
+	  computer: <input type="file" name="item_file" required></div>
+	</li>
+	<li style="margin-bottom: 20px;">
+	  <div style="font-size: 16px;">Enter a short description of this file
+	  that will display when you create a content link: <input type="text"
+	  name="description" style="width: 300px;" required></div>
+	</li>
+	<li>
+	  <input type="submit" value="Upload content">
+	  <input type="hidden" name="action" value="add">
+	  <input type="hidden" name="course_id" value="{{course_id}}">
+	</li>
+      </ol>
+    </form>
+
+    <h2>Manage Current Content</h2>
+    {{content}}
+    
+  </div>
+</div>
+
+{%- endblock content %}

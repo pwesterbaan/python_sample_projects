@@ -1,0 +1,40 @@
+{% extends 'gc_layout.html' %}
+
+{% block head -%}
+<script type="text/javascript"
+	src="static/scripts/manage_grades.js"></script>
+{% endblock %}
+{%- block content -%}
+    
+{{ role_box }}
+{{ menu }}
+<div class="main_content">
+
+<table class="action_table">
+    <tr>
+        <td>Section:</td>
+        <td>Item:</td>
+        <td>Action:</td>
+    </tr>
+    <tr>
+        <td>{{offers_dropdown}}</td>
+        <td><select name="exam_id" id="exam_id" onchange="try_action()"></select></td>
+        <td>
+            <select name="action" id="action" onchange="try_action()">
+                <option value="">-- Choose an action --</option>
+                <option value="exam_absences">Mark exam absences</option>
+                <option value="view_mc">MC: view responses</option>
+                <option value="submit_mc">MC: submit responses</option>
+                <option value="original_mc">MC: revert to scantron responses</option>
+                <option value="view_fr">FR: view scores</option>
+                <option value="submit_fr">FR: submit scores</option>
+                <option value="view_overall">View overall scores</option>
+            </select>
+            <button type="button" onclick="try_action()">Select</button>
+        </td>
+    </tr>
+</table>
+
+<div id="content_pane"></div>
+</div>
+{%- endblock content %}

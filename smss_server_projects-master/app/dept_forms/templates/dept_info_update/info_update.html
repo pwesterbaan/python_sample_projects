@@ -1,0 +1,207 @@
+{% extends 'dept_info_update_layout.html' %}
+
+{% block head -%}
+<script type="text/javascript"
+	src="{{ url_for('dept_forms.static',filename='scripts/info_update.js')
+	     }}"></script>
+<!-- <link rel="stylesheet" href="css/custom-theme/jquery-ui-1.8.23.custom.css" -->
+      <!-- type="text/css" media="all" /> -->
+<link rel="stylesheet" type="text/css"
+      href="{{
+	    url_for('dept_forms.static',filename='styles/css/custom-theme/jquery-ui-1.8.23.custom.css')}}">
+
+{% endblock %}
+{%- block content -%}
+
+<p style="margin-top: 10px;">This form is filled out with the information that
+  the department currently has on file. Please update or add any information
+  that is missing or incorrect. Once you are done, press the button at the
+  bottom of the page to submit your update request. Please be aware that this
+  information will not update immediately. It may take a couple of days since
+  it will not appear in your profile until it has been changed in the
+  departmental records.</p>
+<div style="margin-bottom: 10px;">Your email address: {{username}}@clemson.edu</div> 
+<form method="POST" action="info_update" onsubmit="return generate_updates();">
+	{{cur_data}}
+</form>
+
+<div id="office_form" style="text-align: left; font-size: 12px;" title="Add Office">
+<table>
+  <tr>
+    <td>Office</td>
+    <td>{{office_dropdown}}</td>
+  </tr>
+</table>
+</div>
+
+<div id="phone_number_form" style="text-align: left; font-size: 12px;" title="Add Phone Number"> 
+<table>
+  <tr>
+    <td>Phone number type</td>
+    <td>{{phone_number_type_dropdown}}</td>
+  </tr>
+  <tr>
+    <td>Phone number</td>
+    <td><input type="text" class="phone_number" id="phone_number_value"></td>
+  </tr>
+</table>
+</div>
+
+<div id="education_form" style="text-align: left; font-size: 12px;" title="Add Education">
+<table>
+  <tr>
+    <td>School</td>
+    <td>
+      <div><input type="text" id="education_school_name" style="width: 250px;"></div>
+    </td>
+  </tr>
+  <tr>
+    <td>Semester</td>
+    <td>
+      <input type="text" id="education_semester" style="width: 65px;">
+    </td>
+  </tr>
+  <tr>
+    <td>Year</td>
+    <td>
+      <input type="text" id="education_year" style="width: 40px;">
+    </td>
+  </tr>
+  <tr>
+    <td>Degree</td>
+    <td>
+      <input type="text" id="education_degree" style="width: 40px;">
+    </td>
+  </tr>
+  <tr>
+    <td>Major</td>
+    <td>
+      <input type="text" id="education_major" style="width: 150px;">
+    </td>
+  </tr>
+  <tr>
+    <td>GPA</td>
+    <td>
+      <div>*only required for students</div>
+      <input type="text" id="education_gpa" style="width: 40px;">
+    </td>
+  </tr>
+</table>
+</div>
+
+<div id="mail_address_form" style="text-align: left; font-size: 12px;" title="Add Mail Address">
+<table>
+  <tr>
+    <td>Address type</td>
+    <td>{{mail_address_type_dropdown}}</td>
+  </tr>
+  <tr>
+    <td>Address</td>
+    <td><textarea id="mail_address_value" style="width: 250px; height: 60px;"></textarea></td>
+  </tr>
+</table>
+</div>
+
+<div id="position_form" style="text-align: left; font-size: 12px;" title="Add Position">
+<table>
+  <tr>
+    <td>Position</td>
+    <td><input type="text" id="position_description" style="width: 250px;"></td>
+  </tr>
+</table>
+</div>
+
+<div id="student_form" style="text-align: left; font-size: 12px;"
+     title="Add Student">
+<table>
+  <tr>
+    <td>Student</td>
+    <td><input type="text" id="student_name" style="width: 250px;"></td>
+  </tr>
+  <tr><td colspan="2">*Note: Only students in the Math Sciences directory may be added</td></tr>
+</table>
+</div>
+
+<div id="email_form" style="text-align: left; font-size: 12px;" title="Add Email">
+<table>
+  <tr>
+    <td>Email type</td>
+    <td>{{email_type_dropdown}}</td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td><input type="text" id="email_value"></td>
+  </tr>
+</table>
+</div>
+
+<div id="advisor_form" style="text-align: left; font-size: 12px;" title="Add Advisor">
+<table>
+  <tr>
+    <td>Advisor type</td>
+    <td>
+      <select id="advisor_type">
+        <option value="first">first</option>
+        <option value="MS">MS</option>
+        <option value="PhD">PhD</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td>Advisor</td>
+    <td><input type="text" id="advisor_name" style="width: 150px;"></td>
+  </tr>
+</table>
+</div>
+
+<div id="benchmark_form" style="text-align: left; font-size: 12px;" title="Add Benchmark">
+<table>
+  <tr>
+    <td>Benchmark type</td>
+    <td>
+      {{benchmark_type_dropdown}}
+    </td>
+  </tr>
+  <tr>
+    <td>Date/Time</td>
+    <td>
+      <input type="text" id="benchmark_datetime" class="datepicker_time" style="width: 120px;">
+    </td>
+  </tr>
+  <tr>
+    <td>Passed</td>
+    <td>
+      <div style="width: 250px;">If you have signed up to take a prelim or do a presentation, but have not done so yet, choose unknown.</div>
+      <select id="benchmark_passed">
+        <option value="unknown">unknown</option>
+        <option value="did not pass">did not pass</option>
+        <option value="passed">passed</option>
+      </select>
+    </td>
+  </tr>
+</table>
+</div>
+
+<div id="speak_test_form" style="text-align: left; font-size: 12px;" title="Add SPEAK test attempt">
+<table>
+  <tr>
+    <td>Date/Time</td>
+    <td>
+      <input type="text" id="speak_test_datetime" class="datepicker" style="width: 65px;">
+    </td>
+  </tr>
+  <tr>
+    <td>Passed</td>
+    <td>
+      <select id="speak_test_passed">
+        <option value="did not pass">did not pass</option>
+        <option value="passed">passed</option>
+      </select>
+    </td>
+  </tr>
+</table>
+</div>
+
+</div>
+
+{%- endblock content %}

@@ -1,0 +1,25 @@
+{% extends 'gc_layout.html' %}
+
+{% block content -%}
+<div class="main_content">
+<div style="text-align: center; font-weight: bold; font-size: 50px;
+	    width: 500px; background: #F66733; color: #FFFFFF; border: solid 3px
+	    #F66733; margin: 0px auto; margin-top: 80px; border-top-left-radius:
+	    20px; -moz-border-radius-topleft: 20px; border-top-right-radius: 20px;
+	    -moz-border-radius-topright: 20px;">Grade Collection</div>
+<div style="border: solid 3px #F66733; width: 500px; margin: 0px auto;">
+{%- if roles_menu| length < 1 %}
+<div style="margin: 30px auto; text-align: left;">You are logged in
+  as <span style="font-weight: bold; color: #F66733;"> {{ user }}  </span> and
+  you are not listed as teaching or coordinating a class this semester. <!--If you
+  are a graduate student you should be logging in with your student user as
+  your old employee user has been phased out.--></div>
+{% else %}
+  <ul class="main_links">
+    {% for role in roles_menu %} <li><a href="{{ role.url }}">{{ role.text }}</a></li>
+    {% endfor -%}
+  </ul>
+  {%- endif %}
+</div>
+</div>
+{%- endblock content%}

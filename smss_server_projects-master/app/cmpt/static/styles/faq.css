@@ -1,0 +1,19 @@
+dt
+{
+    /*font-weight: bold;*/
+    font-size: 18px;
+    color: #522D80;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+dt:hover
+{
+    color: #F66733;
+}
+
+.open
+{
+    color: #F66733;
+}

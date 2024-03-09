@@ -1,0 +1,15 @@
+{% extends 'cmpt_layout.html' %}
+
+{% block head -%}
+<link rel="stylesheet"
+      type="text/css"
+      href="{{url_for('.static',filename='styles/faq.css')}}" >
+{% endblock %}
+{%- block content -%}
+<div style="width: 1200px; margin: 0 auto; text-align: left; margin-top: 40px;">
+<div class="title">ENGR View Scores</div>
+{{ cohort_picker }}
+{{ total_count }}
+{{ scores }}
+</div>
+{%- endblock content %}

@@ -1,0 +1,29 @@
+{% extends 'student_info_layout.html' %}
+
+{% block head -%}
+{% endblock %}
+{%- block content -%}
+
+<div style="margin-bottom: 10px; margin-top: 10px;">Update the current
+  semester or year by choosing from the drop down lists below. Click the
+  Update Settings button at the bottom of the page to save your changes.</div>
+<div style="margin-bottom: 10px;">
+  <form method="POST" action="settings">
+    <table style="margin-bottom: 15px;">
+      <tr>
+	<td>semester</td>
+	<td>year</td>
+      </tr>
+      <tr>
+	<td>{{semester}}</td>
+	<td>{{year}}</td>
+      </tr>
+    </table>
+    <div style="text-align: center;">
+      <input type="submit" value="Update Settings">
+      <input type="hidden" name="form_submitted" value="student_info_settings">
+    </div>
+  </form>
+</div>
+
+{%- endblock content %}

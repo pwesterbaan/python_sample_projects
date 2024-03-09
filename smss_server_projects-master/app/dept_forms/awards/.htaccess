@@ -1,0 +1,68 @@
+Options +ExecCGI
+AddHandler cgi-script .py
+
+DirectoryIndex nomination_form.php
+
+<Files "*.tmpl">
+	order deny,allow
+	deny from all
+</Files>
+
+<Files "nomination_form.php">
+	AuthType shibboleth
+	ShibRequireSession on
+	require valid-user
+</Files>
+
+<Files "nomination_form_test.php">
+	AuthType shibboleth
+	ShibRequireSession on
+	require valid-user
+</Files>
+
+<Files "student_info_form.php">
+	AuthType shibboleth
+	ShibRequireSession on
+	require valid-user
+</Files>
+
+<Files "view_nominations.php">
+	AuthType shibboleth
+	ShibRequireSession on
+	require user HEDETNI
+	require user ugcmath
+	require user dekunke
+	require user qiongz
+	require user KIESSLP
+	require user liul
+	require user SPOZNAN
+	require user VJERVIN
+	require user rcartor
+	require user TEITLOF
+	# Don't forget to give access inside the RecommendationLetters folder !
+</Files>
+
+<Files "view_student_info.php">
+	AuthType shibboleth
+	ShibRequireSession on
+	require user HEDETNI
+	require user ugcmath
+	require user dekunke
+	require user qiongz
+	require user KIESSLP
+	require user liul
+	require user SPOZNAN
+	require user VJERVIN
+	require user rcartor
+	require user TEITLOF
+	# Don't forget to give access inside the RecommendationLetters folder !
+</Files>
+
+
+
+
+#redirect for directory maintenance
+Options +FollowSymLinks
+RewriteEngine on
+#RewriteRule evaluate_candidate.py http://mthsc.clemson.edu/dept_forms/maint.html [R=307,L]
+#RewriteRule info_update.py http://mthsc.clemson.edu/dept_forms/maint.html [R=307,L]

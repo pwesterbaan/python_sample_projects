@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet"
+	  type="text/css"
+	  href="{{ url_for('dept_forms.static',filename='styles/cgsg_senators.css') }}">
+    <script type="text/javascript"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript"
+	    src={{url_for('static',filename='scripts/msgBoxFade.js')}}></script>
+    {% block head %}
+    {% endblock -%}
+    {% block javascript %}
+    {% endblock -%}
+  </head>
+  <body>
+    <div style="position:absolute; right:50%; Z-index: 1">
+      <span id="flash_messages_box" style="position: absolute;
+      transform:translate(-50%,10px); min-width:50vw; display: none;
+      width: 50%; padding: 15px; background: #FFFF99; border: solid 2px
+      #000000;">{{get_flashed_messages()[-1]}}</span>
+    </div>
+    {% block content %}{% endblock %}
+    {# Uncomment the following line to print the debug variable to the page #}
+    {# <p> debug in layout: {{ debug }} </p> #}
+  </body>
+</html>

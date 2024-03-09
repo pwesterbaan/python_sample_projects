@@ -1,0 +1,12 @@
+.table_view td,th
+{
+    border: solid 1px #000000;
+    padding: 5px;
+    font-family: sans-serif;
+}
+
+.table_view
+{
+    border: solid 1px #000000;
+    font-size: 15px;
+}

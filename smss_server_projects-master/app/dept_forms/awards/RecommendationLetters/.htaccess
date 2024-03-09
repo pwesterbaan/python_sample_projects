@@ -1,0 +1,26 @@
+Options +ExecCGI
+AddHandler cgi-script .py
+
+<Files "*.pdf">
+	AuthType shibboleth
+	ShibRequireSession on
+	require user HEDETNI
+	require user ugcmath
+	require user ssather
+	require user dekunke
+	require user fxue
+	require user qiongz
+	require user KIESSLP
+	require user liul
+	require user CALKIN
+	require user CAWOOD
+	require user SPOZNAN
+</Files>
+
+
+
+#redirect for directory maintenance
+Options +FollowSymLinks
+RewriteEngine on
+#RewriteRule evaluate_candidate.py http://mthsc.clemson.edu/dept_forms/maint.html [R=307,L]
+#RewriteRule info_update.py http://mthsc.clemson.edu/dept_forms/maint.html [R=307,L]

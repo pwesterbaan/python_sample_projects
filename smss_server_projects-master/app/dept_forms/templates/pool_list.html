@@ -1,0 +1,15 @@
+{% extends 'dept_forms_layout.html' %}
+
+{% block head -%}
+{% endblock %}
+{%- block content -%}
+
+<div style="margin-top: 10px; text-align: center;">
+    <a href="manage_pool" style="margin: 5px;">Add New Pool</a>
+    <a href="candidate_list" style="margin: 5px;">Candidate List</a>
+    <a href="candidate_settings" style="margin: 5px;">Candidate Settings</a>
+</div>
+<hr>
+{{pool_list}}
+
+{%- endblock content %}

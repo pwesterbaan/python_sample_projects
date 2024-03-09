@@ -1,0 +1,34 @@
+Options +ExecCGI
+AddHandler cgi-script .py
+
+
+<Files "application.php">
+	AuthType shibboleth
+	ShibRequireSession on
+	require valid-user
+</Files>
+
+<Files "view_application.php">
+	AuthType shibboleth
+	ShibRequireSession on
+	require user HEDETNI
+	require user EGALLAG
+	require user REBHOLZ
+	require user CWATSON
+</Files>
+
+<Files "view_applicants.php">
+	AuthType shibboleth
+	ShibRequireSession on
+	require user HEDETNI
+	require user EGALLAG
+	require user REBHOLZ
+	require user CWATSON
+</Files>
+
+
+#redirect for directory maintenance
+Options +FollowSymLinks
+RewriteEngine on
+#RewriteRule evaluate_candidate.py http://mthsc.clemson.edu/dept_forms/maint.html [R=307,L]
+#RewriteRule info_update.py http://mthsc.clemson.edu/dept_forms/maint.html [R=307,L]

@@ -1,0 +1,16 @@
+{% extends 'cmpt_admin_layout.html' %}
+
+{% block head -%}
+<link rel="stylesheet"
+      href="{{url_for('.static',filename='styles/admin_add_students.css')}}">
+<script type="text/javascript"
+	src="{{url_for('.static',filename='scripts/admin_add_students.js')}}"> </script>
+{% endblock %}
+{%- block content -%}
+<div style="margin: 0 auto; text-align: left; margin-top: 40px;">
+<div class="title">Download ALEKS Scores</div>
+{{ menu }}
+{{ msg }}
+</div>
+</div>
+{%- endblock content %}

@@ -1,0 +1,139 @@
+course_manager_menu
+{
+    float:left;
+    width:100%;
+    overflow:hidden;
+    position:relative;
+    margin-bottom: 5px;
+}
+
+.course_manager_menu ul
+{
+    clear:left;
+    float:left;
+    list-style:none;
+    margin:0;
+    padding:0;
+    position:relative;
+    left:50%;
+    text-align:center;
+    font-family: Arial;
+}
+
+.course_manager_menu ul li
+{
+    display:block;
+    float:left;
+    list-style:none;
+    margin:0;
+    padding:0;
+    position:relative;
+    right:50%;
+}
+
+.course_manager_menu ul li button:hover
+{
+    background: url('../images/course_btns.png') 0px -33px;
+}
+
+.course_manager_menu ul li button
+{
+    display: block;
+    text-align: center;
+    line-height: 33px;
+    text-decoration: none;
+    color: #FFFFFF;
+    width: 128px;
+    height: 33px;
+    font-size: 12pt;
+    border: 0px;
+    background: url('../images/course_btns.png') 0px 0px;
+}
+
+.course_manager_title
+{
+    text-align: center;
+    font-size: 32pt;
+    font-family: Arial;
+}
+
+.course_manager_format
+{
+    margin-bottom: 10px;
+}
+
+.course_manager_format span
+{
+    font-weight: bold;
+}
+
+.course_manager_display
+{
+    border: solid 1px #0000CC;
+    padding-right: 3px;
+    padding-left: 3px;
+}
+
+.course_manager_tab_menu
+{
+    overflow:hidden;
+    position:relative;
+    /*margin-bottom: 5px;*/
+}
+
+.course_manager_tab_menu ul
+{
+    clear:left;
+    float:left;
+    list-style:none;
+    margin:0;
+    padding:0;
+    position:relative;
+    text-align:center;
+}
+
+.course_manager_tab_menu ul li
+{
+    display:block;
+    float:left;
+    list-style:none;
+    position:relative;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: solid 2px #000000;
+    border-bottom: none;
+    cursor: pointer;
+    background-color: #522D80;
+}
+
+.course_manager_tab_menu ul li a
+{
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Arial;
+    color: #FFFFFF;
+}
+
+.course_manager_tab_menu ul li.selected_tab
+{
+    background-color: #F66733;
+}
+
+.course_manager_outline
+{
+    border: solid 1px black;
+}
+.course_manager_outline td
+{
+    border: solid 1px black;
+    padding: 7px;
+}
+.course_manager_vc_row
+{
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    vertical-align: top;
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet"
+    	  type="text/css"
+    	  href="{{
+    	  url_for('student_info.static',filename='styles/student_info.css')
+    	  }}">
+    <script type="text/javascript"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript"
+	    src={{url_for('static',filename='scripts/msgBoxFade.js')}}></script>
+    {% block head %}
+    {% endblock -%}
+    {% block javascript %}
+    {% endblock -%}
+  </head>
+  <body style="text-align: center;">
+    <div style="position:absolute; right:50%; Z-index: 1">
+      <span id="flash_messages_box" style="position: absolute;
+      display: none; transform:translate(-50%,10px); min-width:50vw;
+      width: 50%; padding: 15px; background: #FFFF99; border:
+      solid 2px #000000;">{{get_flashed_messages()[-1]}}</span>
+    </div>
+    <div style="max-width: 1000px; margin: 0 auto; text-align: left; margin-top: 40px;">
+      <div class="title">{{header_title}}</div>
+      <hr>
+      <div class="menu">
+	<ul>
+          <li><a href="settings">Settings</a></li>
+          <li><a href="download_student_info">Student Info</a></li>
+	</ul>
+      </div>
+      <hr style="clear: left;">
+    {% block content %}{% endblock %}
+    {# Uncomment the following line to print the debug variable to the page #}
+    {# <p> debug in layout: {{ debug }} </p> #}
+  </body>
+</html>

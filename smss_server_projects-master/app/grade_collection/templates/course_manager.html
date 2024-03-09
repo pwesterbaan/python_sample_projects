@@ -1,0 +1,38 @@
+{% extends 'gc_layout.html' %}
+
+{% block head -%}
+<script type="text/javascript"
+	src="static/scripts/course_manager.js"></script>
+{% endblock %}
+{%- block content -%}
+    
+{{ role_box }}
+{{ menu }}
+<div class="main_content">
+  
+<table class="action_table">
+    <tr>
+        <td>Semester:</td>
+        <td>Year:</td>
+        <td>Action:</td>
+    </tr>
+    <tr>
+	<td>{{ semester_dropdown }}</td>
+        <td>{{ year_dropdown }}</td>
+        <td>
+            <select name="form_name" id="form_name" onchange="try_action()">
+                <option value="">-- Choose an action --</option>
+                <option value="view_offers">View Offers</option>
+                <option value="add_offers">Add Offers</option>
+                <option value="view_coords">View Coord.</option>
+                <option value="add_coord">Add Coord.</option>
+                <option value="create_course">Create Course</option>
+		<option value="settings">Set Current Semester</option>
+            </select>
+            <button type="button" onclick="try_action()">Select</button>
+        </td>
+    </tr>
+</table>
+<center><div style="width: 850px; margin: 0 auto;" id="content_pane"></div></center>
+</div>
+{%- endblock content %}

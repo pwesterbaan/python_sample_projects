@@ -1,0 +1,13 @@
+{% extends 'dept_forms_layout.html' %}
+
+{% block head -%}
+{% endblock %}
+{%- block content -%}
+
+<p>The following are a list of candidates that you can evaluate. You can
+  only evaluate each candidate once. You will only get one chance to submit
+  your evaluation since the results are anonymous. We will record that
+  you submitted an evaluation, but your name will not be linked to your
+  evaluation. To evaluate a candidate, click on their name.</p> 
+{{evaluation_list}}
+{%- endblock content %}

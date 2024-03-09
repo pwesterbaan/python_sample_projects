@@ -1,0 +1,5 @@
+<Files "*">
+	AuthType shibboleth
+	ShibRequireSession on
+	require valid-user
+</Files>

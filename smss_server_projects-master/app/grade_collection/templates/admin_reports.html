@@ -1,0 +1,15 @@
+{% extends 'gc_layout.html' %}
+
+{% block head -%}
+<!-- <script type="text/javascript" -->
+	<!-- src="static/scripts/admin_reports.js"></script> -->
+{% endblock %}
+{%- block content -%}
+    
+{{ role_box }}
+{{ menu }}
+<div class="main_content">
+
+<div id="content_pane">{{content}}</div>
+</div>
+{%- endblock content %}

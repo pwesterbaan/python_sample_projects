@@ -1,0 +1,28 @@
+{% extends 'cmpt_admin_layout.html' %}
+
+{% block head -%}
+<link rel="stylesheet"
+      href="{{url_for('.static',filename='styles/admin_lookup_scores.css')}}">
+<script type="text/javascript"
+	src="{{url_for('.static',filename='scripts/admin_lookup_scores.js')}}"></script>
+{% endblock %}
+{%- block content -%}
+<div style="margin: 0 auto; text-align: left; margin-top: 40px;">
+<div class="title">Lookup Scores</div>
+{{ menu }}
+<p>Enter a student's XID to look up their CMPT scores. Their best score will be highlighted in <span style="font-weight: bold; color: #F66733;">orange</span>.</p>
+<form method="POST" action="admin_lookup_scores">
+  <div style="margin-bottom: 20px;">XID:
+    <input type="text" name="xid" value="{{ xid }}">
+    <input type="submit" value="Lookup XID">
+  </div>
+</form>
+<form method="POST" action="admin_lookup_scores">
+  <div style="margin-bottom: 20px;">Username:
+    <input type="text" name="username" value="{{ username }}">
+    <input type="submit" value="Lookup Username">
+  </div>
+</form>
+{{ scores }}
+</div>
+{%- endblock content %}

@@ -1,0 +1,42 @@
+{% extends 'gc_layout.html' %}
+
+{% block head -%}
+<script type="text/javascript"
+	src="static/scripts/coord_reports.js"></script>
+{% endblock %}
+{%- block content -%}
+    
+{{ role_box }}
+{{ menu }}
+<div class="main_content">
+
+<table class="action_table">
+    <tr>
+        <td>Semester:</td>
+        <td>Year:</td>
+        <td>Course:</td>
+        <td>Item:</td>
+        <td>Report:</td>
+    </tr>
+    <tr>
+        <td>{{ semester_dropdown }}</td>
+        <td>{{ year_dropdown }}</td>
+        <td>{{ coord_courses_dropdown }}</td>
+        <td><select name="exam_id" id="exam_id" onchange="try_action()"></select></td>
+        <td>
+            <select name="action" id="action" onchange="try_action()">
+                <option value="">-- Choose an action --</option>
+                <option value="mc_course_report">MC all sections summary</option>
+                <option value="fr_course_report">FR all sections summary</option>
+                <option value="overall_course_report">MC+FR all sections summary</option>
+                <option value="overall_course_grades">MC+FR all sections grades</option>
+                <option value="overall_course_raw_data">MC+FR all sections raw data</option>
+            </select>
+            <button type="button" onclick="try_action()">Select</button>
+        </td>
+    </tr>
+</table>
+
+<div id="content_pane"></div>
+</div>
+{%- endblock content %}

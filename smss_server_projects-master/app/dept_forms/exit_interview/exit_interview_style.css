@@ -1,0 +1,43 @@
+html {
+	background-color:#AAA;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+body {
+	background-color:#DDD;
+	width:70%;
+	margin-left:auto;
+	margin-right:auto;
+	padding-bottom:60px;
+	padding:1em;
+}
+
+label {
+	margin-left:5px;
+}
+
+p.question {
+	margin-left:15px;
+}
+
+textarea {
+	margin-left:30px;
+}
+
+table {
+	margin-left:30px;
+}
+
+td {
+	border: 1px inset gray;
+	padding: 5px;
+}
+
+div#undergrad_questions,
+div#grad_questions,
+p#grad_concentration_area,
+p#undergrad_concentration_area,
+p#minor,
+div#abroad-further {
+	display:none;
+}

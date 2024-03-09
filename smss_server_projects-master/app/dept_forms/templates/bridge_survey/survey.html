@@ -1,0 +1,27 @@
+{% extends 'bridge_survey_layout.html' %}
+
+{% block head -%}
+  <link rel="stylesheet"
+    	  type="text/css"
+    	href="{{ url_for('dept_forms.static',filename='styles/bridge_survey.css') }}">
+  <script type="text/javascript"
+	src="{{ url_for('dept_forms.static',filename='scripts/bridge_survey.js') }}"></script>
+{% endblock %}
+{%- block content -%}
+
+  <div style="border-left: solid 2px #000000; border-right: solid 2px #000000; padding: 10px;">
+    Your responses are anonymous. Once you submit them you cannot go back and change them.
+    <div style="font-weight: bold; font-size: 30px; text-align: center; border: 4px solid #000000; padding: 4px; margin-top: 10px;">Please respond by noon on Friday, August 15.</div>
+  </div>
+  <div style="border: solid 2px #000000; padding: 10px 25px;">
+    <div>This survey is being distributed to current and recent Clemson Math Sciences graduate students in order to obtain feedback regarding the Bridge Program in which new math sciences graduate students enroll each second summer session. Note that we refer to courses with two numbers since the numbering system was recently changed (adding a 4th digit, '0'). Your responses will help us evaluate the effectiveness of the program and allow us to make any necessary changes.</div>
+    <div><span style="font-weight: bold;">Note:</span> Some questions will be crossed out dynamically depending on how you answer question #2. You do not need to answer these questions.</div>
+    <form action="survey.py" method="POST" onsubmit="return validate_form()">
+{{content}}
+<div style="text-align: center; margin-top: 25px;">
+  <input type="submit" value="Submit Survey">
+  <input type="hidden" name="form_name" value="bridge_survey">
+</div>
+    </form>
+
+{%- endblock content %}

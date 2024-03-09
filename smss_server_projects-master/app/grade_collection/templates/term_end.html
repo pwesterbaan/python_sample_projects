@@ -1,0 +1,34 @@
+{% extends 'gc_layout.html' %}
+
+{% block head -%}
+<script type="text/javascript"
+	src="static/scripts/term_end.js"></script>
+{% endblock %}
+{%- block content -%}
+
+{{ role_box }}
+{{ menu }}
+<div class="main_content">
+
+<table class="action_table">
+    <tr>
+        <td>Section:</td>
+        <td>Action:</td>
+    </tr>
+    <tr>
+        <td> {{ offers_dropdown }}</td>
+        <td>
+            <select name="action" id="action" onchange="try_action()">
+                <option value="">-- Choose an action --</option>
+                <option value="term_summary">View term summary report</option>
+                <option value="view_data">View end of term data</option>
+                <option value="submit_data">Submit end of term data</option>
+            </select>
+            <button type="button" onclick="try_action()">Select</button>
+        </td>
+    </tr>
+</table>
+
+<div id="content_pane"></div>
+</div>
+{%- endblock content %}

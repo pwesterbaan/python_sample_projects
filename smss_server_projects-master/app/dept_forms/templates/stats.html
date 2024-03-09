@@ -1,0 +1,18 @@
+{% extends 'dept_forms_layout.html' %}
+
+{% block head -%}
+{% endblock %}
+{%- block content -%}
+<div style="font-size: 50px; font-weight: bold; text-align: center;
+	    margin-top: 15px;">{{ candidate_name }}</div>
+<p>A summary of the evaluation responses is given below. The number in
+  parenthesis after an answer indicates how many people choose that
+  answer.</p> 
+<hr>
+<div class="evaluation_header">Employee Evaluations</div>
+{{ employee_stats_html }}
+<hr style="margin-top: 40px;">
+<div class="evaluation_header">Graduate Students Evaluations</div>
+{{ student_stats_html }}
+</div>
+{%- endblock content %}

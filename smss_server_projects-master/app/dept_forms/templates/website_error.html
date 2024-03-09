@@ -1,0 +1,28 @@
+{% extends 'dept_forms_layout.html' %}
+
+{% block head -%}
+{% endblock %}
+{%- block content -%}
+
+<p style="margin-top: 10px;">Please provide a detailed description of what
+  went wrong. Include what you were doing when you encountered the problem and
+  exactly what happened. Also, specify which browser (Firefox/Internet
+  Explorer/Chrome etc.) you were using and what operating system
+  (Windows/Mac/Linux) that you were running. If more details are needed, you
+  will be contacted by email. Thanks for your help in improving the
+  website.</p>
+<form method="POST" action="website_error">
+  <div style="margin-bottom: 10px;">Your email address:
+    <input type="text"
+    name="email"
+    size="35">
+    (username@clemson.edu)</div>
+  <textarea name="email_text" style="width: 770px; height: 200px;"></textarea>
+  <div style="margin-top: 10px; text-align: center;">
+    <input type="submit" value="Send Error Report">
+    <span style="color: #FF0000;">{{info}}</span>
+    <input type="hidden" name="submit_website_error" value="1">
+    <input type="hidden" name="ref_url" value="{{ref_url}}">
+  </div>
+
+  {%- endblock content %}

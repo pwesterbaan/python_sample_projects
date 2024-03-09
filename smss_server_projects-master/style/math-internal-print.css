@@ -1,0 +1,19 @@
+.noprint {display:none;}
+
+html,body {
+	font-family:'Carrois Gothic',sans-serif;
+}
+ul#nav, div#subnav,div#footer {
+	display:none;
+}
+div#header {
+	background-color:white;
+}
+div#header img {
+	display:none;
+}
+div#app_title {
+	font-family:'Source Sans Pro',sans-serif;
+	text-transform:uppercase;
+	font-size:2em;
+}

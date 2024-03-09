@@ -1,0 +1,74 @@
+{% macro dropdown_menu(dict, name, selected="") -%}
+{# Build the dropdown menu based on a dictionary, name value, and optional -#}
+{# default selection -#}
+<select name={{ name }} id={{ name }}>
+  {% for key in dict -%}
+  <option value="{{key}}" {% if key|string == selected %}selected{%
+          endif %}>{{dict[key]}} </option>
+  {% endfor -%}
+</select>
+{% endmacro -%}
+
+{% macro ferpa_view_table(forms, username, user_role, selected_semester, selected_year, last_name, cuid) -%}
+{# Build the table displaying the requested ferpa forms -#}
+{% if forms|length > 0 %}
+<hr>
+<div style="text-align: center; font-size: 30px; font-weight: bold;
+     margin-bottom: 8px;">Results</div>
+<table class="outline" cellspacing="0">
+  <col style="width:110px">
+  <tr class="title">
+    <td>Semester</td>
+    <td>Year</td>
+    <td>CUID</td>
+    <td>Student<br>Name</td>
+    <td>Uploaded by</td>
+    <td>Date<br>uploaded</td>
+    <td>Actions</td>
+  </tr>
+  {% for item in forms -%}
+  
+  <tr>
+    <td>{{ item["semester"][0].capitalize() + item["semester"][1:] }}</td>
+    <td>{{ item["year"] }}</td>
+    <td>{{ item["CUID"] }}</td>
+    <td>{{ item["last_name"] }}, {{ item["first_name"] }}</td>
+    <td>{{ item["uploaded_by"] }}</td>
+    <td style="text-align: right;">{{ item["date_uploaded"].strftime("%m-%d-%Y") }}</td>
+    <td>
+
+      <form method="POST" id="download" action="/ferpa_repository/ferpa_view">
+        <input type="hidden" name="method" value=download >
+        <input type="hidden" name="form_id" value={{item.get('form_id')}} >
+        <button>download</button>
+      </form>
+      {% if item["uploaded_by"] == username.upper() or user_role == "admin" %}
+      <form method="POST" id="edit" action="/ferpa_repository/ferpa_edit">
+        <input type="hidden" name="method" value="edit" >
+        <input type="hidden" name="form_id" value={{item.get('form_id')}} >
+        <button>edit</button>
+      </form>
+      <form method="POST" id="delete" action="/ferpa_repository/ferpa_view"
+            onsubmit="return confirm('Are you sure you want to delete ' +
+            '{{ item["first_name"] }}' +
+	    ' {{ item["last_name"] }}\'s form?');">
+        <input type="hidden" name="method" value="delete" >
+        <input type="hidden" name="form_id" value={{item.get('form_id')}} >
+	<input type="hidden" name="semester" value={{ selected_semester }} >
+	<input type="hidden" name="year" value={{ selected_year }} >
+	<input type="hidden" name="last_name" value={{ last_name }} >
+	<input type="hidden" name="cuid" value={{ cuid }} >
+        <button name="delete">delete</button>
+      </form>
+      {% endif %}
+    </td>
+  </tr>
+  {% endfor -%}
+  {% else %}
+  <hr>
+  <div style="text-align: center; font-size: 30px; font-weight: bold;
+       margin-bottom: 8px;">Results</div>
+  <div style="color: #FF0000;">No matching forms were found.</div>
+  {% endif %}
+</table>
+{% endmacro -%}

@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,600,400|Carrois+Gothic');
+/*Pontano+Sans|Sintony*/
+html,body {
+	height:100%;
+	margin:0;
+	padding:0;
+	background-color:white;
+	font-family:'Carrois Gothic',sans-serif;
+	font-size:17px;
+	line-height:1.7;
+	color:#333;
+	-webkit-font-smoothing: antialiased;
+}
+h1,h2,h3,h4,h5,h6 {
+margin-top: 0.2em; margin-bottom: 0.5em; line-height: 1.2em;font-weight:600;
+font-family:'Source Sans Pro',sans-serif;
+}
+p {margin-top:0.5em;margin-bottom:0.5em;}
+button, input, select, textarea { font-family: inherit; font-family: Source Sans Pro; font-size:90%; margin: 0; }
+button, input { line-height: normal; }
+button, select { text-transform: none; }
+button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button;}
+button[disabled], html input[disabled] { cursor: default; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance: none;}
+button::-moz-focus-inner, input::-moz-focus-inner {border: 0;padding: 0;}
+textarea { overflow: auto; vertical-align: top; }
+fieldset {border:none;padding:0;margin:0;}
+legend {border:none;padding:0;margin:0;display:block;margin-bottom:0.5em;}
+ul.likert_horiz {list-style-type:none;}
+ul.likert_vert {list-style-type:none;}
+ul.likert_horiz li {display:inline; margin-right:1em;}
+a {color:#522D80;}
+a:hover  {color:#f66733;}
+a.icon_link, a.image_link {text-decoration:none;}
+a.icon_link img {height:1.25em;vertical-align: top;}
+table,td,th {font-size:100%}
+table.styled {border-collapse:collapse;margin-bottom:1em;}
+table.styled td, table.styled th {border:1px solid darkgray; padding:0.2em 0.4em;}
+table.styled th {background-color:#ddd;}
+table.styled tr:nth-child(odd) {background-color:#f9f9f9;}
+
+img { display: inline-block; vertical-align: middle; }
+
+.left { float: left !important; }
+.right { float: right !important; }
+.text-left { text-align: left !important; }
+.text-right { text-align: right !important; }
+.text-center { text-align: center !important; }
+.text-justify { text-align: justify !important; }
+.hide { display: none; }
+
+.dl_styled dt, .dl_styled dd {display:inline; margin:0;}
+.dl_styled dt {font-weight:bold;}
+.dl_styled dt:after { content:": "; }
+.dl_styled dd + dt:before {content:''; display:block;}
+
+div#main {
+	width:100%;
+	min-height:100%;
+	position:relative;
+}
+div#header {
+	height:70px;
+	background-color:#109DC0;
+	position:relative;
+}
+div#app_title {
+	font-family:'Source Sans Pro',sans-serif;
+	text-transform:uppercase;
+	font-size:2em;
+	font-weight:600;
+	line-height:1;
+	color:white;
+	margin:0px;
+	position:absolute;
+	left:20px;
+	top:20px;
+}
+div#header img {
+	height:50px;
+	position:absolute;
+	right:10px;
+	top:10px;
+	background-color:#109DC0;
+}
+ul#nav, div#subnav {
+	background-color:#ccc;
+	padding:5px 20px 5px 20px;
+	margin:0px;
+	border-bottom:1px solid #aaa;
+}
+div#subnav {
+	background-color:#ddd;
+	padding:2px 20px 2px 20px;
+	border-bottom:1px solid #bbb;
+	text-align:center;
+}
+div#subnav ul {
+	padding:0;
+	margin:0;
+}
+ul#nav li, div#subnav ul li{
+	display:inline-block;
+	margin-right:20px;
+	font-size:1.1em;
+	color:black;
+}
+div#subnav ul li {font-size:1em;}
+div#message {
+	text-align:center;
+	background-color:transparent;
+	color:#109DC0;
+	font-family:'Source Sans Pro',sans-serif;
+	font-weight:600;
+	font-size:20px;
+	padding:0.2em;
+	max-width:100%;
+	//border-bottom:2px solid #f66733;
+	//border-top:2px solid #f66733;
+}
+div#message a {
+	color: #109DC0;
+}
+div#error {
+	text-align:center;
+	background-color:#f66733;
+	color:white;
+	font-family:'Source Sans Pro',sans-serif;
+	font-weight:600;
+	font-size:18px;
+	padding:0.25em;
+}
+div#error a {
+	color:white;
+}
+div#content {
+	padding:20px;
+	padding-bottom:50px;
+}
+
+div#footer {
+	background-color:#eee;
+	height:30px;
+	text-align:center;
+	width:100%;
+	position:absolute;
+	bottom:0;
+}
+@media only screen and (max-width: 568px) {
+body {font-size:24px;}
+td {font-size:24px;}
+
+}
+@media only screen and (max-width: 980px) {
+body {font-size:20px;}
+td {font-size:20px;}
+div#app_title {
+	font-size:2em;
+	line-height:0.7;
+}
+}

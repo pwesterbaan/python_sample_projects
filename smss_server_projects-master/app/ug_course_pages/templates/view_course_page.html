@@ -1,0 +1,28 @@
+{% extends 'ug_course_pages_layout.html' %}
+
+{% block head -%}
+{% endblock %}
+{%- block content -%}
+
+<div id="main">
+
+  <div id="header">
+    <a href="http://www.clemson.edu/math" title="School Home">
+      <img src="/style/math_logo.png" alt="school logo">
+    </a>
+    <h1><a href={{url_for('ug_course_pages.course_pages')}}>Coordinated Course Information</a></h1>
+  </div>
+  
+  <div id="content">
+    <h1 id="course_title">{{course_title}}</h1>
+    <h2 id="course_description" style="text-align:center;">{{course_description}}</h2>
+
+    {{content}}
+
+  </div>
+  
+  <div id="course_page_footer">
+    <span id="updated"><b>Last Updated</b>: {{last_updated}}</span>
+    <span id="comments"><b>Comments to</b>: <a href="mailto:{{coord_email}}">{{coord_email}}</a></span>
+  </div>
+{%- endblock content %}
