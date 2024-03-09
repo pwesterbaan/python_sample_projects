@@ -1,0 +1,104 @@
+#!/usr/bin/python
+
+''' 
+Minimum spanning tree instance generator.
+
+Usage: mstgen n_nodes n_edges cost_min cost_max [% high-cost [seed]]
+       where % high-cost is the minimum percentage of edgess set to cost_max
+       and seed is the random-number generator seed.
+
+Output: DIMACS_like format
+        Lines starting with "c" are comments and are ignored.
+        Line starting with "p" contains the string "mst", desgnating the 
+            problem type, followed by number of nodes and number of arcs.
+        Lines of form "e U V W" are edges, with endpoints U and V and 
+            weight W.
+
+Weights are uniform in the range cost_min to cost_max, except that
+    (n_edges * %high-cost/100) edges are set to cost_max and the 
+    remainder are random.
+'''
+
+
+import sys
+import random
+
+if len(sys.argv) < 5:
+    print "Usage: mstgen n_nodes n_arcs cost_min cost_max [% high-cost [seed]]"
+    print "       where % high-cost is the minimum percentage of arcs set to cost_max"
+    print "       and seed is the random-number generator seed."
+    sys.exit()
+    
+n_nodes = int(sys.argv[1])
+n_arcs = int(sys.argv[2])
+cost_min = int(sys.argv[3])
+cost_max = int(sys.argv[4])
+
+if len(sys.argv) >= 6:
+    hicost = int(sys.argv[5])
+else:
+    hicost = 0
+    
+if len(sys.argv) >= 7:
+    seed = int(sys.argv[6])
+    random.seed(seed)
+else:
+    seed = None
+
+if n_arcs < n_nodes - 1 or n_arcs > n_nodes * (n_nodes - 1) / 2:
+    print "Arcs not in range"
+    sys.exit()
+
+# Print DIMACS-ish comment header
+
+print "c Minimum Spanning Tree"
+print "c"
+print "c nodes: ", n_nodes, "; arcs: ", n_arcs, "; cost range: ", cost_min, "-", cost_max
+if hicost > 0:
+    print "c Percent high-cost: ", hicost
+
+if seed:
+    print "c Random seed: ", seed
+
+print "c"
+
+# Print DIMACS-format "problem" card
+
+print "p mst ", n_nodes, n_arcs
+
+# No DIMACS-format node descriptors, because MST does not have sources or sinks
+
+# Build a tree.  Add nodes in order 0, 1, ..., n_nodes - 1, choosing
+# the other endpoint of the added arc at random from nodes already in
+# the tree.
+
+j = 0
+arcs = []
+for i in range(1, n_nodes):
+    arcs.append((random.randint(0, i - 1), i))
+
+# for j in range(0, n_nodes - 1):
+#     print j, arcs[j][0], arcs[j][1]
+
+# Add remaining arcs at random
+
+j = n_nodes - 1
+while j < n_arcs:
+    new_arc = (random.randint(0, n_nodes - 1), random.randint(0, n_nodes - 1))
+    new_arc = (min(new_arc), max(new_arc))
+    if new_arc[0] != new_arc[1] and new_arc not in arcs:
+        arcs.append(new_arc)
+        j += 1
+
+# Create list of edge costs
+cost = [random.choice(range(cost_min, cost_max + 1)) for i in range(n_arcs)]
+
+for i in range(n_arcs * hicost/100):
+    cost[i] = cost_max
+
+random.shuffle(cost)
+
+# Print DIMACS edge cards
+
+for j in range(n_arcs):
+    print "e ", arcs[j][0], arcs[j][1], cost[j]
